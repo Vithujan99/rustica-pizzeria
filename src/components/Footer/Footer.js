@@ -11,7 +11,7 @@ const Footer = () => {
         <div className="footer-contact">
           <p className="footer-contact-titel">Kontakt Info</p>
           <div className="footer-contact-content">
-            <p>02166 8544178</p>
+            <p>02166 88844</p>
             <a
               className="footer-contact-email"
               href="mailto:info@rustica-pizzeria.de?subject=Feedback&body=Message"
