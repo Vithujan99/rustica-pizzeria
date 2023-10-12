@@ -50,24 +50,26 @@ const Checkout = () => {
       ordered_items: cart.items,
       entryDate: new Date(),
     };
-    await axios.post("http://localhost:4000/orders", postData).then((res) => {
-      cart.deleteCart();
-      setMessageForClient(
-        <div className="order-fin-container">
-          <p className="danke-text">{res.data}</p>
-          {serv.service === "Abholung" ? (
-            <p className="abholung-zeit-text">
-              Sie können die Bestellung in 30 Minuten abholen.
-            </p>
-          ) : (
-            <></>
-          )}
-          <NavLink className="back-home-button" to="/" end>
-            Zurück
-          </NavLink>
-        </div>
-      );
-    });
+    await axios
+      .post("https://rustica-pizzeria-api.onrender.com/orders", postData)
+      .then((res) => {
+        cart.deleteCart();
+        setMessageForClient(
+          <div className="order-fin-container">
+            <p className="danke-text">{res.data}</p>
+            {serv.service === "Abholung" ? (
+              <p className="abholung-zeit-text">
+                Sie können die Bestellung in 30 Minuten abholen.
+              </p>
+            ) : (
+              <></>
+            )}
+            <NavLink className="back-home-button" to="/" end>
+              Zurück
+            </NavLink>
+          </div>
+        );
+      });
   };
 
   function checkAbholData() {
@@ -124,7 +126,7 @@ const Checkout = () => {
     }
   }
 
-  const serverUrl = "http://localhost:4000";
+  const serverUrl = "https://rustica-pizzeria-api.onrender.com";
 
   const createOrder = (data) => {
     // Order is created on the server and the order id is returned

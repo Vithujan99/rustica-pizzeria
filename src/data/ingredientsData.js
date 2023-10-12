@@ -1,6 +1,6 @@
 import axios from "axios";
 const ingredientsData = await axios
-  .get("http://localhost:4000/ingredients")
+  .get("https://rustica-pizzeria-api.onrender.com/ingredients")
   .then((res) => {
     return res.data;
   });

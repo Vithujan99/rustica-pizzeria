@@ -28,7 +28,7 @@ const Aorders = () => {
     const fetchData = async () => {
       try {
         const data = await axios
-          .get("http://localhost:4000/admin/orders", {
+          .get("https://rustica-pizzeria-api.onrender.com/admin/orders", {
             headers: {
               "x-access-token": localStorage.getItem("token"),
             },
@@ -97,11 +97,15 @@ const Aorders = () => {
       orders[week][d]?.map(async (order) => {
         try {
           const res = await axios
-            .delete("http://localhost:4000/admin/orders/" + order._id, {
-              headers: {
-                "x-access-token": localStorage.getItem("token"),
-              },
-            })
+            .delete(
+              "https://rustica-pizzeria-api.onrender.com/admin/orders/" +
+                order._id,
+              {
+                headers: {
+                  "x-access-token": localStorage.getItem("token"),
+                },
+              }
+            )
             .then((res) => {
               if (!res.data.auth) {
                 navigate("/login");
@@ -120,11 +124,15 @@ const Aorders = () => {
     orders[week][day]?.map(async (order) => {
       try {
         const res = await axios
-          .delete("http://localhost:4000/admin/orders/" + order._id, {
-            headers: {
-              "x-access-token": localStorage.getItem("token"),
-            },
-          })
+          .delete(
+            "https://rustica-pizzeria-api.onrender.com/admin/orders/" +
+              order._id,
+            {
+              headers: {
+                "x-access-token": localStorage.getItem("token"),
+              },
+            }
+          )
           .then((res) => {
             if (!res.data.auth) {
               navigate("/login");
@@ -136,7 +144,7 @@ const Aorders = () => {
       }
       try {
         const res = await axios.delete(
-          "http://localhost:4000/orders/" + order._id,
+          "https://rustica-pizzeria-api.onrender.com/orders/" + order._id,
           {
             headers: {
               "x-access-token": localStorage.getItem("token"),
