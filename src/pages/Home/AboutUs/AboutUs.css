@@ -1,0 +1,139 @@
+.home-aboutus {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.home-aboutus-titel-holder {
+  width: 300px;
+  height: 75px;
+  position: relative;
+  text-align: center;
+  border: 5px solid var(--color-accent2);
+  padding: 4px 10px;
+  transition: all 0.2s ease;
+}
+.home-aboutus-titel {
+  font-family: "Caprasimo", sans-serif;
+  font-weight: 400;
+  font-size: 50px;
+  color: var(--color-accent2);
+}
+.home-aboutus-titel-holder:before {
+  content: "";
+  position: absolute;
+  height: 10px;
+  width: 301px;
+  background-color: white;
+  margin: auto;
+  left: -5px;
+  right: 0;
+  top: -5px;
+  transition: width 0.5s, height 0.5s 0.5s;
+}
+.home-aboutus-titel-holder:after {
+  content: "";
+  position: absolute;
+  height: 10px;
+  width: 301px;
+  background-color: white;
+  margin: auto;
+  left: -5px;
+  right: 0;
+  bottom: -5px;
+  transition: width 0.5s, height 0.5s 0.5s;
+}
+.home-aboutus-titel-holder:hover:before,
+.home-aboutus-titel-holder:hover:after {
+  width: 0;
+  height: 5px;
+  transition: height 0.5s, width 0.5s 0.5s;
+}
+
+.home-aboutus-content-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 25px;
+}
+.home-aboutus-content-adresse {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.home-adress-content {
+  font-style: normal;
+  font-size: 17px;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.home-adress-conten-tel {
+  color: black;
+  transition: color 0.3s;
+}
+.home-adress-conten-tel:hover {
+  color: var(--color-four);
+  transition: color 0.3s;
+}
+.home-aboutus-content-öffnungzeiten {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.öffnungzeiten-table {
+  font-size: 17px;
+}
+.öffnungzeiten-table tr td:first-child {
+  font-weight: 600;
+}
+.öffnungzeiten-table tr td {
+  padding: 5px;
+}
+.table-line {
+  color: black;
+}
+.table-line-active {
+  color: var(--color-four);
+  font-weight: 600;
+}
+
+@media (max-width: 800px) {
+  .home-aboutus-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .home-aboutus-titel-holder {
+    width: 250px;
+    height: 55px;
+  }
+  .home-aboutus-titel {
+    font-size: 35px;
+  }
+  .home-aboutus-titel-holder:before {
+    width: 251px;
+  }
+  .home-aboutus-titel-holder:after {
+    width: 251px;
+  }
+  .home-aboutus-content-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
+  }
+}

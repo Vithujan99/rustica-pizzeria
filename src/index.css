@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Caprasimo&family=Parisienne&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #ffc300 black;
+}
+
+html::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #f5f5f5;
+}
+
+html::-webkit-scrollbar {
+  width: 10px;
+  background-color: #f5f5f5;
+}
+
+html::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+  background-color: #ffc300;
+}
+
+:root {
+  --color-primary: #3e150f;
+  --color-secondory: #f5b7a2;
+  --color-tertiary: #ffdac4;
+  --color-four: #960800;
+  --color-accent1: #ffc300;
+  --color-accent2: #194d33;
+  --color-accent3: #fd7703;
+  --color-white: #fff;
+  --color-orginal: #d8a274;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: none;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16;
+  font-weight: 600;
+}
+
+.container {
+  padding: 0 10% 0 10%;
+}
+
+/*Animation slide in*/
+.slide-in {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  transform-origin: bottom;
+}
+.slide-out {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  transform-origin: top;
+}

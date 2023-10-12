@@ -1,0 +1,33 @@
+.login-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.login-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.login-wrapper h1 {
+  text-align: center;
+}
+.login-wrong {
+  font-size: 15px;
+  color: red;
+  text-align: center;
+}
+.login-wrapper input {
+  font-size: 18px;
+  padding: 8px;
+  text-align: center;
+}
+.login-button {
+  background-color: white;
+  font-size: 16px;
+  padding: 7.5px;
+}
+.login-button:hover {
+  background-color: var(--color-accent1);
+}

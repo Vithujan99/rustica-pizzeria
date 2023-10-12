@@ -1,0 +1,49 @@
+.orders-week-container {
+  margin: 2px;
+  border: 4px solid black;
+}
+.orders-week-titel {
+  width: 100%;
+  padding: 15px;
+  text-align: center;
+}
+.orders-day-container {
+  margin: 0px 5px 0px 5px;
+  border: 4px solid black;
+  background-color: white;
+}
+.orders-day-titel {
+  width: 100%;
+  padding: 15px;
+  text-align: center;
+}
+.orders-delete-day {
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 12px;
+  text-align: center;
+  color: rgb(209, 27, 27);
+  transition: all 0.3s;
+}
+.orders-delete-day:hover {
+  background-color: var(--color-accent1);
+  color: black;
+  transition: all 0.3s;
+}
+.orders-delete-week {
+  cursor: pointer;
+  width: 100%;
+  font-size: 22px;
+  font-weight: 700;
+  padding: 15px;
+  text-align: center;
+  background-color: white;
+  color: rgb(209, 27, 27);
+  transition: all 0.3s;
+}
+.orders-delete-week:hover {
+  background-color: var(--color-accent1);
+  transition: all 0.3s;
+}

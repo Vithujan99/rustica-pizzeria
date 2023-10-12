@@ -1,0 +1,201 @@
+/*.hero-img {
+  width: 100%;
+  height: calc(100vh + 175px);
+  background-image: url("../../../asset/pizza-time-tasty-homemade-traditional-pizza-italian-recipe-low.webp");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: ". content-a";
+  position: relative;
+  border-radius: 0 0 30% 0;
+}*/
+.hero-container {
+  width: 100%;
+  height: calc(100vh);
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: self-end;
+  justify-content: flex-end;
+}
+.hero-image {
+  position: absolute;
+  width: 100%;
+  height: calc(100vh);
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.hero-spaceholder {
+  width: 100%;
+  height: 100%;
+}
+.hero-content {
+  width: 100%;
+  font-size: 20px;
+  color: #e2e4d9;
+  margin-bottom: 100px;
+  padding-right: 10px;
+}
+.hero-heading {
+  font-weight: 600;
+  font-size: 50px;
+  color: #ffeeca;
+  display: flex;
+  flex-direction: column;
+}
+.hero-heading span {
+  font-size: 80px;
+  font-weight: 400;
+  font-family: "Parisienne", sans-serif;
+  background: linear-gradient(
+    to bottom,
+    var(--color-accent3),
+    var(--color-accent1),
+    red
+  );
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.hero-text {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  color: white;
+}
+.spacial-word {
+  font-weight: 700;
+  color: #ffeeca;
+}
+
+@media (max-height: 600px) {
+  .hero-content {
+    margin-bottom: 5px;
+  }
+}
+@media (max-height: 500px) {
+  .hero-container {
+    height: 100vh;
+  }
+  .hero-image {
+    height: 100vh;
+  }
+  .hero-heading {
+    font-size: 30px;
+    color: #ffeeca;
+  }
+  .hero-heading span {
+    font-size: 60px;
+    color: #ffeeca;
+    background: linear-gradient(
+      to bottom,
+      var(--color-accent3),
+      var(--color-accent1),
+      red
+    );
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+  .hero-text {
+    font-size: 15px;
+    margin-bottom: 5px;
+  }
+}
+@media (max-height: 450px) {
+  .hero-container {
+    height: 70vh;
+  }
+  .hero-image {
+    height: 70vh;
+  }
+  .hero-content {
+    margin-bottom: 75px;
+  }
+  .hero-heading {
+    line-height: 1;
+  }
+  .hero-text {
+    line-height: 1;
+  }
+}
+
+@media (max-height: 370px) {
+  .hero-container {
+    height: 300px;
+  }
+  .hero-image {
+    height: 300px;
+  }
+  .hero-content {
+    margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .hero-content {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 800px) {
+  .hero-container {
+    width: 100%;
+    height: 80vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  .hero-image {
+    height: calc(80vh);
+  }
+  .hero-content {
+    width: 100%;
+    font-size: 20px;
+    color: #e2e4d9;
+    margin-bottom: 20px;
+    padding-right: 10px;
+    text-align: center;
+  }
+  .hero-heading {
+    font-size: 30px;
+    color: #ffeeca;
+  }
+  .spacial-word {
+    font-weight: 700;
+    color: #ffeeca;
+  }
+}
+
+@media (max-width: 500px) {
+  .hero-container {
+    height: 60vh;
+  }
+  .hero-image {
+    height: 60vh;
+  }
+  .hero-content {
+    font-size: 14px;
+  }
+  .hero-heading {
+    font-size: 25px;
+    color: #ffeeca;
+  }
+  .hero-heading span {
+    font-size: 50px;
+    color: #ffeeca;
+    background: linear-gradient(
+      to bottom,
+      var(--color-accent3),
+      var(--color-accent1),
+      red
+    );
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  .spacial-word {
+    font-weight: 700;
+    color: #ffeeca;
+  }
+}

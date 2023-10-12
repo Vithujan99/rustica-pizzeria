@@ -1,0 +1,124 @@
+.cart-card {
+  position: relative;
+  border: 2px solid white;
+  margin-top: 25px;
+}
+.cart-card-zusatz {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  color: red;
+  position: absolute;
+  right: -2px;
+  top: -20px;
+}
+.cart-card-zusatz:hover {
+  color: #558c85;
+}
+.cart-card-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--color-accent1);
+}
+.cart-card-header.no-border {
+  border: 0;
+}
+.cart-card-header-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+.cart-card-header-left .ask-zusatz-head-header-counter {
+  gap: 0;
+}
+.cart-card-header-left .ask-zusatz-head-header-count {
+  font-size: 20px;
+}
+.cart-card-name {
+  font-size: 22px;
+  font-weight: 600;
+}
+.cart-card-header-right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+.cart-card-preis {
+  font-size: 17px;
+}
+.cart-car-delete {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.cart-card-extra.close {
+  height: 20px;
+  margin-bottom: 0px;
+  overflow: hidden;
+  filter: blur(0.75px);
+  transition: all 0.4s;
+}
+.cart-card-extra.open {
+  height: auto;
+  margin-bottom: 10px;
+  transition: all 0.4s;
+}
+.cart-card-extra-show {
+  cursor: pointer;
+  position: absolute;
+  z-index: 1;
+  width: 30px;
+  height: 20px;
+  bottom: 0px;
+  right: 0px;
+}
+.cart-card-extra-show.open {
+  transform: rotate(0deg);
+  transition: transform 0.4s;
+}
+.cart-card-extra-show.close {
+  transform: rotate(180deg);
+  transition: transform 0.4s;
+}
+.cart-card-ingredients {
+  padding: 5px 20px 0px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 7px;
+  line-height: 1;
+}
+.cart-card-ingredients span {
+  color: var(--color-accent1);
+}
+
+.cart-card-beschreibung {
+  color: gainsboro;
+  text-align: left;
+  padding: 5px 20px;
+  font-size: 12px;
+}
+
+@media (max-width: 450px) {
+  .cart-card-header-left .ask-zusatz-head-header-count {
+    font-size: 13px;
+    width: 25px;
+  }
+  .cart-card-header-left .ask-zusatz-head-header-arow {
+    width: 15px;
+    height: 15px;
+  }
+  .cart-card-name {
+    font-size: 17px;
+    font-weight: 600;
+  }
+  .cart-card-preis {
+    font-size: 12px;
+  }
+  .cart-card-ingredients {
+    font-size: 12px;
+  }
+}

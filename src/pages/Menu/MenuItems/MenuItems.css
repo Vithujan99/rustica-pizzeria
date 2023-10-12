@@ -1,0 +1,353 @@
+.menu-titel-container {
+  padding-top: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.menu-items-titel {
+  position: relative;
+  width: 600px;
+  height: 300px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 0;
+  border-radius: 300px 300px 0 0;
+  background-image: url("../../../asset/white-ing-drawing-low.webp");
+  background-size: contain;
+  z-index: -2;
+}
+.white-background {
+  position: absolute;
+  bottom: 0;
+  background-color: white;
+  width: 500px;
+  height: 250px;
+  border-radius: 250px 250px 0 0;
+  z-index: -1;
+}
+.item-tiel {
+  margin-top: 100px;
+  font-size: 50px;
+  font-weight: 700;
+  width: 400px;
+  text-align: center;
+}
+.items-show-container {
+  width: 100%;
+  min-height: calc(100vh - 127px);
+  display: flex;
+  flex-direction: row;
+}
+.all-Item-buttons {
+  display: none;
+}
+.all-Item-buttons-show {
+  display: none;
+}
+.left-Item-buttons {
+  width: 300px;
+  height: calc(100vh - 127px);
+  position: sticky;
+  top: 126px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.item-holder {
+  width: 100%;
+  padding: 15px;
+  background-image: url("../../../asset/white-ing-drawing-low.webp");
+  background-size: contain;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.item-holder-shopping-cart-holder {
+  display: none;
+}
+.right-Item-buttons {
+  width: 300px;
+  height: calc(100vh - 127px);
+  position: sticky;
+  top: 126px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.item-button {
+  width: 100%;
+  height: 11%;
+  font-size: 25px;
+  background-color: white;
+  border: 0;
+  padding-left: 5px;
+  padding-right: 5px;
+  transition: all 0.2s ease;
+}
+
+.item-button:hover {
+  height: 17%;
+  color: white;
+  background-color: var(--color-accent2);
+  transition: all 0.2s ease;
+}
+.item-active {
+  height: 17%;
+  color: white;
+  background-color: var(--color-accent2);
+  text-shadow: 5px 5px black;
+  transition: all 1s ease;
+}
+
+.menu-item {
+  width: 300px;
+  height: 275px;
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 10%;
+}
+@media (max-height: 637px) {
+  .item-button {
+    font-size: 15px;
+  }
+}
+
+@media (max-height: 450px) {
+  .left-Item-buttons {
+    width: 300px;
+    height: calc(100vh - 75px);
+    top: 74px;
+  }
+  .right-Item-buttons {
+    width: 300px;
+    height: calc(100vh - 75px);
+    top: 74px;
+  }
+  .item-button {
+    font-size: 15px;
+    line-height: 0;
+    height: 12.5%;
+  }
+
+  .item-button:hover {
+    height: 12.5%;
+  }
+  .item-active {
+    height: 12.5%;
+  }
+}
+
+@media (max-height: 450px) {
+  .item-holder {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .menu-item {
+    width: 100%;
+    height: auto;
+    background-color: rgba(255, 255, 255, 1);
+    margin: 0;
+    border-radius: 15px;
+  }
+  .item-holder-shopping-cart-holder {
+    display: block;
+    position: fixed;
+    bottom: 5px;
+    right: 10px;
+    z-index: 2;
+  }
+  .item-holder-shpping-cart {
+    padding: 7px;
+    border-radius: 50%;
+    border: 3px solid var(--color-accent1);
+    transition: border 0.2s ease;
+  }
+}
+
+@media (max-height: 300px) {
+  .left-Item-buttons {
+    width: 300px;
+    height: 100vh;
+    top: 0px;
+  }
+  .right-Item-buttons {
+    width: 300px;
+    height: 100vh;
+    top: 0px;
+  }
+}
+@media (max-width: 1050px) {
+  .right-Item-buttons {
+    display: none;
+  }
+
+  .left-Item-buttons {
+    display: none;
+  }
+  .all-Item-buttons-show {
+    display: block;
+    position: fixed;
+    height: 50px;
+    width: 100px;
+    top: 50%;
+    z-index: 503;
+    background-color: white;
+    border-radius: 50px;
+    text-align: right;
+  }
+  .all-Item-buttons-show.close {
+    left: 250px;
+    transition: all 0.3s ease;
+  }
+  .all-Item-buttons-show.open {
+    left: -50px;
+    transition: all 0.3s ease;
+  }
+  .all-Item-buttons {
+    width: 300px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 7.5px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    z-index: 503;
+    background-color: white;
+    transition: all 0.3s ease;
+  }
+  .all-Item-buttons.hide {
+    left: -300px;
+    transition: all 0.3s ease;
+  }
+
+  .all-item-button {
+    width: 100%;
+    font-size: 20px;
+    background-color: white;
+    border: 0;
+    padding: 7px;
+    transition: all 0.2s ease;
+  }
+  .all-item-button:hover {
+    color: white;
+    background-color: var(--color-accent2);
+    padding: 20px;
+    transition: all 0.2s ease;
+  }
+
+  .all-item-button.active {
+    color: white;
+    background-color: var(--color-accent2);
+    text-shadow: 5px 5px black;
+    padding: 20px;
+    transition: all 1s ease;
+  }
+  .item-holder {
+    padding: 50px 25px 50px 25px;
+  }
+}
+
+@media (max-width: 975px) {
+  .menu-items-titel {
+    width: 500px;
+    height: 250px;
+    border-radius: 250px 250px 0 0;
+    border-bottom: 0;
+  }
+  .white-background {
+    width: 400px;
+    height: 200px;
+    border-radius: 200px 200px 0 0;
+  }
+  .item-tiel {
+    font-size: 40px;
+    width: 300px;
+  }
+}
+/*Navbar is static*/
+@media (max-width: 800px) {
+  .item-holder {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  .menu-item {
+    width: 100%;
+    height: auto;
+    background-color: rgba(255, 255, 255, 1);
+    margin: 0;
+    border-radius: 15px;
+  }
+  .item-holder-shopping-cart-holder {
+    display: block;
+    position: fixed;
+    bottom: 5px;
+    right: 10px;
+    z-index: 2;
+  }
+  .item-holder-shpping-cart {
+    padding: 7px;
+    border-radius: 50%;
+    border: 3px solid var(--color-accent1);
+    transition: border 0.2s ease;
+  }
+}
+
+@media (max-width: 500px) {
+  .menu-items-titel {
+    width: 350px;
+    height: 175px;
+    border-radius: 175px 175px 0 0;
+    border-bottom: 0;
+  }
+  .white-background {
+    width: 275px;
+    height: 137.5px;
+    border-radius: 137.5px 137.5px 0 0;
+  }
+  .item-tiel {
+    margin-top: 80px;
+    font-size: 30px;
+    width: 250px;
+  }
+}
+
+/*Für Galaxy Fold*/
+@media (max-width: 350px) {
+  .item-tiel {
+    margin-top: 50px;
+    font-size: 20px;
+    width: 150px;
+  }
+  .all-Item-buttons {
+    width: 225px;
+    padding: 5px;
+  }
+  .all-Item-buttons-show.close {
+    left: 175px;
+    transition: all 0.3s ease;
+  }
+}
+@media (max-width: 300px) {
+  .menu-items-titel {
+    width: 275px;
+    height: 137.5px;
+    border-radius: 137.5px 137.5px 0 0;
+    border-bottom: 0;
+  }
+  .white-background {
+    width: 200px;
+    height: 100px;
+    border-radius: 100px 100px 0 0;
+  }
+}

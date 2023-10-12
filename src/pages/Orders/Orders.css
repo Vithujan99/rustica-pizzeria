@@ -1,0 +1,56 @@
+.orders-table {
+  margin-top: 10px;
+  width: 95%;
+  padding-left: 2.5%;
+  border-spacing: 0px;
+  text-align: left;
+}
+.orders-table td,
+.orders-table th {
+  padding: 5px;
+  border: 0;
+}
+.orders-table td {
+  outline: 0;
+  border-bottom: 1px solid black;
+}
+.orders-table-anmerkung {
+  min-width: 250px;
+  max-width: 350px;
+  font-size: 14px;
+}
+.order-table-row {
+  background-color: white;
+}
+.order-table-row-fin {
+  background-color: rgba(69, 239, 8, 0.644);
+}
+.orders-table-order {
+  border-bottom: 1px solid black;
+}
+.orders-table .item-name {
+  font-weight: 600;
+  color: black;
+}
+.orders-table .zusatz-container {
+  display: inline;
+}
+.orders-table .zusatz-name {
+  color: #c02424c7;
+  font-weight: 600;
+}
+.orders-table .item-description {
+  word-break: break-word;
+  white-space: pre-wrap;
+}
+.orders-table-order-betrag {
+  font-weight: 700;
+  color: rgb(59, 142, 219);
+}
+.orders-table button {
+  background-color: var(--color-accent1);
+}
+.orders-table button:hover {
+  background-color: crimson;
+  cursor: pointer;
+}

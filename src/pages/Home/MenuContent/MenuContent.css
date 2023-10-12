@@ -1,0 +1,198 @@
+.home-menu {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 125px;
+}
+.home-menu-titel-holder {
+  width: 200px;
+  height: 75px;
+  position: relative;
+  text-align: center;
+  border: 5px solid var(--color-four);
+  padding: 4px 10px;
+  transition: all 0.2s ease;
+}
+.home-menu-menu-titel {
+  font-family: "Caprasimo", sans-serif;
+  font-weight: 400;
+  font-size: 50px;
+  color: var(--color-four);
+}
+.home-menu-titel-holder:before {
+  content: "";
+  position: absolute;
+  height: 15px;
+  width: 201px;
+  background-color: white;
+  margin: auto;
+  left: -5px;
+  right: 0;
+  top: -5px;
+  transition: width 0.5s, height 0.5s 0.5s;
+}
+.home-menu-titel-holder:after {
+  content: "";
+  position: absolute;
+  height: 15px;
+  width: 201px;
+  background-color: white;
+  margin: auto;
+  left: -5px;
+  right: 0;
+  bottom: -5px;
+  transition: width 0.5s, height 0.5s 0.5s;
+}
+
+.home-menu-titel-holder:hover:before,
+.home-menu-titel-holder:hover:after {
+  width: 0;
+  height: 5px;
+  transition: height 0.5s, width 0.5s 0.5s;
+}
+
+.home-cards-holder {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0 40px;
+  gap: 100px;
+}
+.home-item {
+  width: 300px;
+  height: 275px;
+  border: 3px solid var(--color-four);
+  color: black;
+  background-color: white;
+  border-radius: 10%;
+  position: relative;
+}
+.middle-circle {
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  margin-left: -10px;
+  background-color: white;
+  /*background: linear-gradient(0deg, white 10px, transparent 10px);*/
+  border: 3px solid var(--color-four);
+  border-radius: 50%;
+}
+.pizza-img {
+  position: absolute;
+  width: 200px;
+  top: -100px;
+  left: 50%;
+  margin-left: -100px;
+  transform: rotate(360deg);
+  z-index: -1;
+  transition: transform 1.25s ease-in-out;
+}
+.reis-img {
+  width: 250px;
+  top: -125px;
+  left: 50%;
+  margin-left: -125px;
+}
+.home-item:hover .pizza-img {
+  transform: rotate(180deg);
+  transition: transform 1, 25s ease-in-out;
+}
+
+.home-item .item-kaufen:hover {
+  background-color: var(--color-four);
+  border: 2px solid var(--color-four);
+}
+@media (max-height: 450px) {
+  .home-cards-holder {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 60px;
+  }
+  .middle-circle {
+    height: 15px;
+    width: 15px;
+    top: -7.5px;
+    left: 50%;
+    margin-left: -7.5px;
+  }
+  .pizza-img {
+    position: absolute;
+    width: 100px;
+    top: -50px;
+    left: 50%;
+    margin-left: -50px;
+  }
+  .reis-img {
+    width: 125px;
+    top: -62.5px;
+    left: 50%;
+    margin-left: -62.5px;
+  }
+  .home-item .item-card {
+    margin-top: 3px;
+  }
+  .home-item {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    border-radius: 15px;
+  }
+  .home-item .add-icon {
+    color: var(--color-four);
+    transition: all 0.2s ease;
+  }
+  .home-item .item-card-content:hover .add-icon {
+    color: var(--color-accent1);
+    transition: all 0.2s ease;
+  }
+}
+@media (max-width: 800px) {
+  .home-cards-holder {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 50px;
+  }
+  .middle-circle {
+    height: 15px;
+    width: 15px;
+    top: -7.5px;
+    left: 50%;
+    margin-left: -7.5px;
+  }
+  .pizza-img {
+    position: absolute;
+    width: 100px;
+    top: -50px;
+    left: 50%;
+    margin-left: -50px;
+  }
+  .reis-img {
+    width: 125px;
+    top: -62.5px;
+    left: 50%;
+    margin-left: -62.5px;
+  }
+  .home-item .item-card {
+    margin-top: 3px;
+  }
+  .home-item {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    border-radius: 15px;
+  }
+  .home-item .add-icon {
+    color: var(--color-four);
+    transition: all 0.2s ease;
+  }
+  .home-item .item-card-content:hover .add-icon {
+    color: var(--color-accent1);
+    transition: all 0.2s ease;
+  }
+}

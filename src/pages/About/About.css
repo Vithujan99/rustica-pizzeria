@@ -1,0 +1,165 @@
+.about-page {
+  padding-top: 170px;
+}
+.about-page-öz {
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, rgb(238, 235, 238), var(--color-accent2));
+}
+.about-page-öz-titel {
+  margin-top: 50px;
+  font-weight: 700;
+  font-size: 30px;
+}
+.about-page-öz-container {
+  display: flex;
+  overflow: hidden;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 30px;
+  margin: 25px 100px 50px 100px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+}
+.about-page-öz-card {
+  width: 325px;
+  height: 325px;
+  font-size: 20px;
+  background-color: black;
+  border-radius: 100%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.about-page-öz-card-day {
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: white;
+  text-align: center;
+}
+.about-page-öz-card-time {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-page-adresse-section {
+  width: 600px;
+  height: 60vh;
+  margin: 25px 0px 50px 0px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 30px;
+}
+.about-page-adresse-card {
+  padding: 25px;
+  background-color: white;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.about-page-a-titel {
+  margin-bottom: 5px;
+}
+.about-page-a {
+  display: flex;
+  flex-direction: column;
+}
+.about-page-a-street {
+  padding: 5px;
+  font-size: 20px;
+  font-weight: 600;
+}
+.about-page-a-city {
+  padding: 5px;
+  font-size: 20px;
+  font-weight: 600;
+}
+.about-page-a-tel {
+  padding: 5px;
+  font-size: 20px;
+  font-weight: 600;
+  color: black;
+}
+@media (max-width: 800px) {
+  .about-page {
+    padding-top: 0px;
+  }
+}
+@media (max-width: 600px) {
+  .about-page-öz-titel {
+    margin-top: 25px;
+    font-weight: 700;
+    font-size: 25px;
+  }
+  .about-page-öz-container {
+    gap: 15px;
+    padding: 15px;
+    margin: 15px 20px 25px 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+  }
+  .about-page-öz-card {
+    width: 145px;
+    height: 150px;
+    font-size: 15px;
+    padding: 5px;
+    border-radius: 15px;
+  }
+  .about-page-öz-card-day {
+    font-weight: 700;
+    margin-bottom: 14px;
+    color: white;
+    text-align: center;
+  }
+  .about-page-öz-card-time {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .about-page-adresse-section {
+    width: 95vw;
+  }
+}
+@media (max-width: 500px) {
+  .about-page-adresse-section {
+    width: 95vw;
+    height: auto;
+    margin: 20px 0px 40px 0px;
+  }
+  .about-page-adresse-card {
+    padding: 15px;
+  }
+  .about-page-a-titel {
+    margin-bottom: 5px;
+    font-size: 20px;
+  }
+  .about-page-a-street {
+    padding: 3px;
+    font-size: 15px;
+  }
+  .about-page-a-city {
+    padding: 3px;
+    font-size: 15px;
+  }
+  .about-page-a-tel {
+    padding: 3px;
+    font-size: 15px;
+  }
+}

@@ -1,0 +1,322 @@
+/*Extra Ingredient*/
+.ask-zusatz-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 500;
+}
+.ask-zusatz-container.hide {
+  display: none;
+}
+.ask-zusatz-container .black-background {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.ask-zusatz-content {
+  position: fixed;
+  width: 650px;
+  height: 90%;
+  background-color: black;
+  top: 5%;
+  left: 50%;
+  margin-left: -325px;
+  padding: 15px;
+  padding-top: 2px;
+  padding-bottom: 0px;
+  border: 2px solid white;
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.ask-zusatz-head {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.ask-zusatz-head-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.ask-zusatz-head-titel {
+  font-size: 20px;
+  font-weight: 600;
+  margin-left: -12px;
+  width: 80%;
+  word-wrap: normal;
+}
+.ask-zusatz-close {
+  position: absolute;
+  color: black;
+  cursor: pointer;
+  width: 32px;
+  height: 20px;
+  opacity: 1;
+  right: 2px;
+  top: 2px;
+}
+.ask-zusatz-close:hover {
+  opacity: 0.7;
+}
+.ask-zusatz-close:before,
+.ask-zusatz-close:after {
+  position: absolute;
+  right: 10px;
+  content: " ";
+  height: 20px;
+  width: 2px;
+  background-color: white;
+}
+.ask-zusatz-close:before {
+  transform: rotate(45deg);
+}
+.ask-zusatz-close:after {
+  transform: rotate(-45deg);
+}
+
+.ask-zusatz-head-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+}
+.ask-zusatz-head-header-summe {
+  font-size: 18px;
+  margin-right: 10px;
+}
+.ask-zusatz-head-header-summe span {
+  color: var(--color-accent1);
+  font-weight: 600;
+}
+
+.ask-zusatz-head-header-counter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+.ask-zusatz-head-header-count {
+  font-size: 20px;
+  text-align: center;
+  width: 40px;
+  border: 0;
+  border-radius: 5px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+.ask-zusatz-head-header-arows {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.ask-zusatz-head-header-arow {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.ask-zusatz-head-item-kaufen {
+  font-size: 18px;
+  background-color: white;
+  border: none;
+  border-radius: 15px;
+}
+.ask-zusatz-head-item-kaufen:hover {
+  box-shadow: 2px 2px 2px 1px var(--color-accent1);
+}
+.ask-zusatz-head-added-items {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-size: 16px;
+  gap: 15px;
+  border-top: 4px solid var(--color-accent1);
+  border-left: 4px solid var(--color-accent1);
+  border-bottom: 4px solid var(--color-accent1);
+  padding: 5px;
+  max-height: 120px;
+  overflow-y: scroll;
+}
+.ask-zusatz-head-added-items::-webkit-scrollbar-track {
+  background-color: var(--color-accent1);
+}
+
+.ask-zusatz-head-added-items::-webkit-scrollbar {
+  width: 4px;
+  background-color: var(--color-accent1);
+}
+
+.ask-zusatz-head-added-items::-webkit-scrollbar-thumb {
+  background-color: white;
+}
+.ask-zusatz-head-added-item {
+  display: flex;
+  flex-direction: row;
+  align-items: self-start;
+}
+.ask-zusatz-item-count {
+  color: #ffc300;
+}
+
+/*Extra Ingredient Körper*/
+.ask-zusatz-body {
+  height: 100%;
+  overflow-y: scroll;
+  /* border-left: 4px solid var(--color-accent1);
+    border-bottom: 4px solid var(--color-accent1);*/
+  padding: 5px;
+}
+.ask-zusatz-body::-webkit-scrollbar-track {
+  background-color: var(--color-accent1);
+}
+.ask-zusatz-body::-webkit-scrollbar {
+  width: 4px;
+  background-color: var(--color-accent1);
+}
+
+.ask-zusatz-body::-webkit-scrollbar-thumb {
+  background-color: white;
+}
+
+.ask-zusatz-body-section {
+  margin-top: 15px;
+  text-align: left;
+}
+.ask-zusatz-body-section-name {
+  font-size: 17px;
+  font-weight: 600;
+}
+.ask-zusatz-body-section-items {
+  font-size: 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 5px;
+  padding: 10px 7px 0px 7px;
+}
+.ask-zusatz-body-section-item {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.ask-zusatz-item-button {
+  cursor: pointer;
+  background-color: black;
+  min-width: 25px;
+  max-width: 25px;
+}
+.ask-zusatz-item-name {
+  height: 100%;
+}
+.ask-zusatz-body-section-item-add:hover {
+  background-color: var(--color-accent1);
+}
+
+/*Für Zusatz2*/
+.ask-zusatz-body-section-select {
+  font-size: 17px;
+  margin-top: 5px;
+}
+
+/*Text area*/
+.ask-zusatz-body-section-textfeld-container {
+  margin-top: 15px;
+  border-top: 1px solid white;
+  padding-top: 10px;
+}
+.ask-zusatz-body-section-textfeld-beschreibung {
+  display: block;
+  color: var(--color-accent1);
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 80%;
+}
+.ask-zusatz-body-section-textfeld-beschreibung span {
+  color: white;
+  font-size: 12px;
+  font-weight: 400;
+}
+.ask-zusatz-body-section-textfeld {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  height: 100px;
+  font-size: 16px;
+}
+@media (max-width: 800px) {
+  /*Extra ingredients*/
+  .ask-zusatz-content {
+    position: fixed;
+    width: 90%;
+    height: 90%;
+    background-color: black;
+    top: 5%;
+    left: 5%;
+    margin-left: 0;
+  }
+}
+@media (max-width: 550px) {
+  .ask-zusatz-head-header-summe {
+    font-size: 16px;
+  }
+  .ask-zusatz-head-item-kaufen {
+    font-size: 14px;
+  }
+  .ask-zusatz-head-added-items {
+    font-size: 14px;
+    gap: 7px;
+    padding: 5px;
+    max-height: 120px;
+    overflow-y: scroll;
+  }
+  .ask-zusatz-body-section-name {
+    font-size: 16px;
+  }
+  .ask-zusatz-body-section-items {
+    font-size: 14px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px;
+    padding: 10px 7px 0px 7px;
+  }
+  .ask-zusatz-body-section-select {
+    font-size: 15px;
+    margin-top: 5px;
+  }
+  .ask-zusatz-body-section-textfeld-beschreibung {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 350px) {
+  .ask-zusatz-head-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .ask-zusatz-body-section-items {
+    font-size: 14px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2px;
+    padding: 2px 7px 0px 7px;
+  }
+}

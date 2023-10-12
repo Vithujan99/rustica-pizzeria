@@ -1,0 +1,233 @@
+.item-card {
+  position: relative;
+  padding: 20px;
+  height: 275px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.item-card-content {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.add-icon {
+  display: none;
+}
+.item-name {
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+}
+.item-stoff {
+  font-size: 9px;
+  font-weight: 400;
+  color: black;
+  display: block;
+}
+.item-beschreibung {
+  flex: 2;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: left;
+  color: var(--color-accent2);
+}
+.item-preis {
+  font-size: 18px;
+  font-weight: 500;
+  bottom: 65px;
+}
+.item-kaufen {
+  width: 80%;
+  font-size: 17px;
+  border-radius: 10px;
+  border: 2px solid black;
+  transition: all 0.2s ease;
+  background-color: white;
+}
+.item-kaufen:hover {
+  background-color: rgb(252, 31, 31);
+  color: white;
+  border: 2px solid rgb(252, 31, 31);
+  transition: all 0.2s ease;
+}
+
+@media (max-height: 450px) {
+  .item-card {
+    position: relative;
+    padding: 0;
+    height: auto;
+    min-height: 75px;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+  }
+  .item-card-content {
+    flex: 3;
+    height: auto;
+    padding: 4px 2px 0px 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: normal;
+    gap: 2px;
+  }
+  .add-icon {
+    display: block;
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    color: black;
+    transition: all 0.2s ease;
+  }
+  .item-card-content:hover .add-icon {
+    color: red;
+    transition: all 0.2s ease;
+  }
+  .item-name {
+    position: static;
+    padding-right: 40px;
+    width: 100%;
+    text-align: left;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.1;
+    word-wrap: normal;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: first baseline;
+  }
+  .item-stoff {
+    display: inline;
+    margin-left: 10px;
+  }
+
+  .item-beschreibung {
+    position: static;
+    padding-right: 40px;
+    font-size: 14px;
+    text-align: left;
+    width: 100%;
+    line-height: 1.1;
+    word-wrap: normal;
+  }
+  .item-preis {
+    position: static;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: right;
+    padding-right: 5px;
+  }
+  .item-kaufen {
+    display: none;
+  }
+}
+
+@media (max-width: 800px) {
+  .item-card {
+    position: relative;
+    padding: 0;
+    height: auto;
+    min-height: 75px;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+  }
+  .item-card-content {
+    flex: 3;
+    height: auto;
+    padding: 4px 2px 0px 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: normal;
+    gap: 2px;
+  }
+  .add-icon {
+    display: block;
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    color: black;
+    transition: all 0.2s ease;
+  }
+  .item-card-content:hover .add-icon {
+    color: red;
+    transition: all 0.2s ease;
+  }
+  .item-name {
+    position: static;
+    padding-right: 40px;
+    width: 100%;
+    text-align: left;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.1;
+    word-wrap: normal;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: first baseline;
+  }
+  .item-stoff {
+    display: inline;
+    margin-left: 10px;
+  }
+
+  .item-beschreibung {
+    position: static;
+    padding-right: 40px;
+    font-size: 14px;
+    text-align: left;
+    width: 100%;
+    line-height: 1.1;
+    word-wrap: normal;
+  }
+  .item-preis {
+    position: static;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: right;
+    padding-right: 5px;
+  }
+  .item-kaufen {
+    display: none;
+  }
+  /*position: static;
+    flex: 1;
+    padding: 0 5px 0 5px;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 0 15px 15px 0;
+    border: 5px solid black;
+    border-left: 5px solid black;
+    background-color: white;
+    transition: all 0.2s ease;
+  }
+  .item-kaufen:hover {
+    border: 5px solid black;
+    border-left: 0px;
+    background-color: rgb(252, 31, 31);
+    color: white;
+    transition: all 0.2s ease;
+  }*/
+}
+
+@media (max-width: 450px) {
+  .item-name {
+    font-size: 18px;
+    line-height: 1.1;
+  }
+
+  .item-beschreibung {
+    font-size: 12px;
+  }
+  .item-preis {
+    font-size: 14px;
+  }
+}

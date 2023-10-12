@@ -1,0 +1,208 @@
+/*Css for Bar*/
+
+.blackBackground {
+  position: fixed;
+  top: 0;
+  z-index: 503;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.blackBackground.hide {
+  display: none;
+}
+
+.barShoppedItems {
+  width: 450px;
+  height: 100vh;
+  background-color: black;
+  z-index: 504;
+  position: fixed;
+  top: 0;
+  right: 0;
+  transition: right 0.3s ease;
+}
+.barShoppedItems.hide {
+  right: -450px;
+  transition: right 0.3s ease;
+}
+
+.closeBar {
+  cursor: pointer;
+  position: absolute;
+  left: 5px;
+  top: 8px;
+  width: 32px;
+  height: 20px;
+  opacity: 1;
+}
+
+.closeBar:hover {
+  opacity: 0.7;
+}
+
+.closeBar:before,
+.closeBar:after {
+  position: absolute;
+  left: 15px;
+  content: " ";
+  height: 20px;
+  width: 2px;
+  background-color: white;
+}
+.closeBar:before {
+  transform: rotate(45deg);
+}
+.closeBar:after {
+  transform: rotate(-45deg);
+}
+/*Bar Content*/
+.barContent {
+  color: white;
+  padding: 10px;
+  font-size: 15px;
+  font-weight: 500;
+}
+.barTitel {
+  font-size: 23px;
+  font-weight: 600;
+  color: var(--color-accent1);
+  margin-top: 30px;
+  text-align: center;
+}
+.barBody {
+  padding-top: 15px;
+}
+.barBody-closed {
+  color: red;
+  text-align: center;
+}
+.barbody-imWagen-text {
+  font-weight: 600;
+  font-size: 18px;
+  padding: 2px 0 0 0;
+}
+.barBody-cards-holder {
+  max-height: 250px;
+  padding-right: 3px;
+  overflow-y: auto;
+}
+.barBody-cards-holder::-webkit-scrollbar-track {
+  background-color: white;
+}
+
+.barBody-cards-holder::-webkit-scrollbar {
+  width: 8px;
+  background-color: white;
+}
+
+.barBody-cards-holder::-webkit-scrollbar-thumb {
+  background-color: var(--color-accent1);
+}
+.barFooter {
+  padding-top: 10px;
+}
+.barFooterService-buttons {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+}
+.barFooterService-button {
+  width: 100px;
+  border-radius: 15px;
+  border: 3px solid black;
+  padding: auto;
+  transition: right 0.3s ease;
+}
+.barFooterService-button:hover {
+  background-color: var(--color-accent1);
+  transition: right 0.3s ease;
+}
+.barFooterService-button.active {
+  background-color: var(--color-accent1);
+  border: 3px solid white;
+  transition: right 0.3s ease;
+}
+.barFooterService-input {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+.bar-plz-text {
+  font-weight: 500;
+}
+.bar-plz-input {
+  font-size: 18px;
+  padding: 3px;
+  width: 30%;
+  text-align: center;
+  outline: 0;
+  border-radius: 10px;
+  border: 0;
+}
+.bar-plz-error-text {
+  color: red;
+  font-size: 17px;
+  font-weight: 500;
+}
+.barFooterKaufen {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+.barFooterKaufen.row {
+  flex-direction: row;
+  justify-content: center;
+}
+.barFooterKaufen.col {
+  flex-direction: column;
+  align-items: center;
+}
+.barFooterKaufen-button {
+  background-color: white;
+  border: 0;
+  border-radius: 7.5px;
+  color: black;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s;
+}
+
+.barFooterKaufen.row .barFooterKaufen-button {
+  width: 100%;
+  padding: 8px;
+}
+.barFooterKaufen.col .barFooterKaufen-button {
+  width: 50%;
+  padding: 12px;
+}
+.barFooterKaufen-button:hover {
+  background-color: var(--color-accent1);
+  transition: background-color 0.3s;
+}
+.min-cost-red {
+  color: red;
+}
+
+@media (max-width: 450px) {
+  .barShoppedItems {
+    width: 300px;
+  }
+}
+@media (max-width: 300px) {
+  .barShoppedItems {
+    width: 275px;
+  }
+  .barBody-cards-holder {
+    max-height: 200px;
+  }
+}

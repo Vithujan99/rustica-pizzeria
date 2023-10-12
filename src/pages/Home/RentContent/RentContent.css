@@ -1,0 +1,70 @@
+.home-rent {
+  padding-top: 50px;
+  padding-bottom: 100px;
+  background-color: #ffc38e;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.home-rent-titel-holder {
+  width: 400px;
+  height: 75px;
+  margin-bottom: 50px;
+  position: relative;
+  text-align: center;
+  border: 5px solid white;
+  padding: 4px 10px;
+  transition: all 0.2s ease;
+}
+.home-rent-titel {
+  font-family: "Caprasimo", sans-serif;
+  font-weight: 400;
+  font-size: 50px;
+  text-align: center;
+  color: white;
+}
+.home-rent-titel-holder:before {
+  content: "";
+  position: absolute;
+  height: 15px;
+  width: 401px;
+  background-color: #ffc38e;
+  margin: auto;
+  left: -5px;
+  right: 0;
+  top: -5px;
+  transition: width 0.5s, height 0.5s 0.5s;
+}
+.home-rent-titel-holder:after {
+  content: "";
+  position: absolute;
+  height: 15px;
+  width: 401px;
+  background-color: #ffc38e;
+  margin: auto;
+  left: -5px;
+  right: 0;
+  bottom: -5px;
+  transition: width 0.5s, height 0.5s 0.5s;
+}
+.home-rent-titel-holder:hover:before,
+.home-rent-titel-holder:hover:after {
+  height: 5px;
+  width: 0;
+  transition: height 0.5s, width 0.5s 0.5s;
+}
+@media (max-width: 500px) {
+  .home-rent-titel-holder {
+    width: 250px;
+    height: 100px;
+  }
+  .home-rent-titel {
+    font-size: 35px;
+  }
+  .home-rent-titel-holder:before {
+    width: 251px;
+  }
+  .home-rent-titel-holder:after {
+    width: 251px;
+  }
+}

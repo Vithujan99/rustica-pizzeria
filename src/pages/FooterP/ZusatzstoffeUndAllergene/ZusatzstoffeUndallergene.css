@@ -1,0 +1,45 @@
+.z-a-page {
+  font-size: 17.5px;
+}
+.z-a-page h1 {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+.allergens-holder {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+.allergen-holder {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+}
+.allergen-holder sup {
+  color: rgb(0, 132, 255);
+  font-weight: 600;
+}
+.allergen-img {
+  width: 50px;
+  height: 50px;
+}
+.allergen-img-cross {
+  position: absolute;
+  width: 50px;
+  height: 2px;
+  background-color: red;
+  left: 0;
+  top: 50%;
+  rotate: 45deg;
+}
+.zusatzstoff-holder {
+  margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.zusatzstoff-holder sup {
+  color: rgb(0, 132, 255);
+  font-weight: 600;
+}

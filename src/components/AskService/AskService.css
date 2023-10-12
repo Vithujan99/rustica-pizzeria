@@ -1,0 +1,238 @@
+.askServiceContainer.hide {
+  display: none;
+}
+.askServiceContainer .blackBackground {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.askService {
+  width: 50%;
+  height: 50%;
+  color: white;
+  background-color: black;
+  z-index: 503;
+  position: fixed;
+  top: 25%;
+  right: 25%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid var(--color-accent1);
+}
+.askService.hide {
+  display: none;
+}
+
+.deliverySide {
+  width: 50%;
+  min-width: 200px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-right: 2px solid var(--color-accent1);
+  transition: all 0.2s ease;
+}
+.deliverySide:hover {
+  background-color: var(--color-accent1);
+  transition: all 0.2s ease;
+}
+.deliverySide:hover .askServiceButton.left {
+  background-color: var(--color-accent1);
+  color: black;
+  transition: all 0.2s ease;
+}
+.deliveryImage {
+  height: 50%;
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pickUpSide {
+  width: 50%;
+  min-width: 200px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-left: 2px solid var(--color-accent1);
+  transition: all 0.2s ease;
+}
+.pickUpSide:hover {
+  background-color: var(--color-accent1);
+  transition: all 0.2s ease;
+}
+.pickUpSide:hover .askServiceButton.right {
+  background-color: var(--color-accent1);
+  color: black;
+  transition: all 0.2s ease;
+}
+.pickUpImage {
+  height: 50%;
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.askServiceButton {
+  height: 50%;
+  font-size: 25px;
+  background-color: black;
+  border: none;
+  color: var(--color-accent1);
+  transition: all 0.2s ease;
+}
+
+.askPLZ {
+  width: 50%;
+  height: 50%;
+  color: white;
+  background-color: black;
+  z-index: 503;
+  position: fixed;
+  top: 25%;
+  right: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid var(--color-accent1);
+}
+.askPLZ.hide {
+  display: none;
+}
+
+.plz-text {
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.plz-input {
+  font-size: 25px;
+  width: 25%;
+  text-align: center;
+  outline: 0;
+}
+
+.plz-button {
+  position: absolute;
+  background-color: var(--color-accent1);
+  bottom: 70px;
+  border: 0;
+  font-size: 20px;
+  border-radius: 15px;
+}
+.back-button {
+  position: absolute;
+  color: white;
+  background-color: black;
+  top: 30px;
+  border: 0;
+  font-size: 20px;
+  border-radius: 15px;
+  border: 2px solid white;
+  transition: all 0.2s ease;
+}
+
+.back-button:hover {
+  color: black;
+  background-color: white;
+  transition: all 0.2s ease;
+}
+
+.plz-error-text {
+  position: absolute;
+  bottom: 70px;
+  color: red;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+@media (max-width: 830px) {
+  .askService {
+    top: 20%;
+    right: 25%;
+    width: 50%;
+    height: 60%;
+    transition: none;
+  }
+  .deliverySide {
+    width: 100%;
+    height: 50%;
+    border: 0;
+    border-bottom: 2px solid var(--color-accent1);
+    justify-content: center;
+  }
+  .deliveryImage {
+    height: 60%;
+    width: 100px;
+  }
+  .pickUpSide {
+    width: 100%;
+    height: 50%;
+    border: 0;
+    border-top: 2px solid var(--color-accent1);
+    justify-content: center;
+  }
+  .pickUpImage {
+    height: 60%;
+    width: 100px;
+  }
+  .askServiceButton {
+    height: 25%;
+  }
+}
+
+@media (max-width: 800px) {
+  .askServiceContainer .blackBackground {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+}
+@media (max-width: 600px) {
+  .plz-text {
+    text-align: center;
+    word-wrap: normal;
+  }
+  .plz-input {
+    width: 85px;
+  }
+  .plz-error-text {
+    text-align: center;
+    word-wrap: normal;
+    bottom: 15px;
+  }
+  .plz-button {
+    bottom: 25px;
+  }
+}
+
+@media (max-width: 450px) {
+  .askService {
+    width: 250px;
+    height: 80%;
+    top: 10%;
+    left: 50%;
+    margin-left: -125px;
+    transition: none;
+  }
+  .deliverySide {
+    min-width: 100px;
+  }
+  .pickUpSide {
+    min-width: 100px;
+  }
+  .plz-text {
+    font-size: 18px;
+  }
+  .askServiceButton {
+    font-size: 18px;
+  }
+  .back-button {
+    font-size: 18px;
+  }
+}

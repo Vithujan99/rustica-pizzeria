@@ -1,0 +1,103 @@
+.footer {
+  position: relative;
+  width: 100%;
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 25px;
+  padding-top: 10px;
+  padding-bottom: 25px;
+}
+.footer-contact {
+  height: 100%;
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  margin: 10px 0px 5px 0px;
+}
+.footer-contact-titel {
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.footer-contact-content {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.footer-contact-email {
+  color: white;
+}
+.footer-copyright {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.footer-zahlung {
+  height: 100%;
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  margin: 10px 0px 5px 0;
+}
+.footer-zahlung-titel {
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.footer-zahlung-content {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.footer-zahlung-content-paymethod {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+.footer-links {
+  height: 100%;
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  margin: 10px 0px 5px 0;
+}
+.footer-links-titel {
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.footer-links-content {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.footer-link {
+  color: white;
+}
+@media (max-width: 500px) {
+  .footer {
+    width: 100%;
+    display: block;
+    padding: 20px 25px 25px 25px;
+  }
+  .footer-contact-titel {
+    text-align: center;
+  }
+  .footer-zahlung-titel {
+    text-align: center;
+  }
+  .footer-links-titel {
+    text-align: center;
+  }
+}
