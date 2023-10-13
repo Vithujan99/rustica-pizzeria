@@ -12,14 +12,15 @@ const AskService = () => {
     setShow(false);
   };
   let location = useLocation();
+
   return (
     <div
       className={
         sessionStorage.getItem("ser") === "Abholung" ||
         serv.askPlz ||
-        location.pathname === "/rustica-webpage/orders" ||
-        location.pathname === "/rustica-webpage/login" ||
-        location.pathname === "/rustica-webpage/admin/orders"
+        location.pathname === "/orders" ||
+        location.pathname === "/login" ||
+        location.pathname === "/admin/orders"
           ? "askServiceContainer hide"
           : "askServiceContainer"
       }
