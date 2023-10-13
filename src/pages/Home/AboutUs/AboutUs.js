@@ -3,10 +3,13 @@ import { Link } from "react-router-dom";
 import { TimeContext } from "../../../context/TimeContext";
 
 import "./AboutUs.css";
+import Holidays from "date-holidays";
 
 const AboutUs = () => {
   const time = useContext(TimeContext);
   const day = time.getDay();
+  var hd = new Holidays("DE", "nw");
+  var Now = new Date();
   return (
     <div className="home-aboutus">
       <div className="home-aboutus-titel-holder">
@@ -67,7 +70,9 @@ const AboutUs = () => {
               </tr>
               <tr
                 className={
-                  day === "Sunday" ? "table-line-active" : "table-line"
+                  hd.isHoliday(Now) || day === "Sunday"
+                    ? "table-line-active"
+                    : "table-line"
                 }
               >
                 <td>So/Feiertags:</td>

@@ -12,7 +12,7 @@ const Login = () => {
     e.preventDefault();
 
     await axios
-      .post("https://rustica-pizzeria-api.onrender.com/login", {
+      .post(process.env.REACT_APP_API_URL + "/login", {
         username,
         password,
       })

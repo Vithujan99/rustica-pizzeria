@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import { motion } from "framer-motion";
 import "./About.css";
+import { TimeContext } from "../../context/TimeContext";
+import Holidays from "date-holidays";
 const About = () => {
   const container = {
     hidden: { opacity: 1, scale: 0 },
@@ -21,6 +23,10 @@ const About = () => {
       opacity: 1,
     },
   };
+  const time = useContext(TimeContext);
+  const day = time.getDay();
+  var hd = new Holidays("DE", "nw");
+  var Now = new Date();
   return (
     <motion.div
       className="about-page"
@@ -36,26 +42,61 @@ const About = () => {
           initial="hidden"
           animate="visible"
         >
-          <motion.div className="about-page-öz-card" variants={item}>
+          <motion.div
+            className={
+              day === "Monday" || day === "Tuesday"
+                ? "about-page-öz-card"
+                : "about-page-öz-card"
+            }
+            variants={item}
+          >
             <div className="about-page-öz-card-day">Montag - Dienstag</div>
             <div>17:30-22:30</div>
           </motion.div>
-          <motion.div className="about-page-öz-card" variants={item}>
+          <motion.div
+            className={
+              day === "Wednesday" || day === "Thursday"
+                ? "about-page-öz-card active"
+                : "about-page-öz-card"
+            }
+            variants={item}
+          >
             <div className="about-page-öz-card-day">Mittwoch - Donnerstag</div>
             <div>11:30-14:30</div>
             und
             <div>17:30 - 22:30</div>
           </motion.div>
-          <motion.div className="about-page-öz-card" variants={item}>
+          <motion.div
+            className={
+              day === "Friday"
+                ? "about-page-öz-card active"
+                : "about-page-öz-card"
+            }
+            variants={item}
+          >
             <div className="about-page-öz-card-day">Freitag</div>
             <div>11:30-14:30</div> und
             <div>17:30 - 23:00</div>
           </motion.div>
-          <motion.div className="about-page-öz-card" variants={item}>
+          <motion.div
+            className={
+              hd.isHoliday(Now) || day === "Saturday"
+                ? "about-page-öz-card active"
+                : "about-page-öz-card"
+            }
+            variants={item}
+          >
             <div className="about-page-öz-card-day">Samstag</div>
             <div>17:00-23:00</div>
           </motion.div>
-          <motion.div className="about-page-öz-card" variants={item}>
+          <motion.div
+            className={
+              day === "Sunday"
+                ? "about-page-öz-card active"
+                : "about-page-öz-card"
+            }
+            variants={item}
+          >
             <div className="about-page-öz-card-day">Sonntag / Feiertags</div>
             <div>17:00-22:30</div>
           </motion.div>

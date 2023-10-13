@@ -16,7 +16,7 @@ const Admin = () => {
   const [action, setAction] = useState([]);
   useEffect(() => {
     axios
-      .get("https://rustica-pizzeria-api.onrender.com/orders", {
+      .get(process.env.REACT_APP_API_URL + "/orders", {
         headers: {
           "x-access-token": localStorage.getItem("token"),
         },
@@ -32,7 +32,7 @@ const Admin = () => {
       const fetchData = async () => {
         try {
           const data = await axios
-            .get("https://rustica-pizzeria-api.onrender.com/orders", {
+            .get(process.env.REACT_APP_API_URL + "/orders", {
               headers: {
                 "x-access-token": localStorage.getItem("token"),
               },
@@ -97,7 +97,7 @@ const Admin = () => {
   const handleDelete = async (id) => {
     try {
       const res = await axios.delete(
-        "https://rustica-pizzeria-api.onrender.com/orders/" + id,
+        process.env.REACT_APP_API_URL + "/orders/" + id,
         {
           headers: {
             "x-access-token": localStorage.getItem("token"),

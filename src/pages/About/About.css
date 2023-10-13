@@ -39,6 +39,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  scale: 1;
+  transition: scale 0.3s;
+}
+.about-page-öz-card.active {
+  background-color: var(--color-accent2);
+  scale: 1.05;
+  transition: scale 0.3s;
 }
 .about-page-öz-card-day {
   font-weight: 700;
@@ -66,7 +73,8 @@
 }
 .about-page-adresse-card {
   padding: 25px;
-  background-color: white;
+  background-color: black;
+  color: white;
   border-radius: 30px;
   display: flex;
   flex-direction: column;
@@ -94,7 +102,7 @@
   padding: 5px;
   font-size: 20px;
   font-weight: 600;
-  color: black;
+  color: white;
 }
 @media (max-width: 800px) {
   .about-page {

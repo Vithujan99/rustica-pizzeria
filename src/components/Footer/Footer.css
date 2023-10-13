@@ -30,6 +30,12 @@
   flex-direction: column;
   gap: 5px;
 }
+.footer-contact-tel {
+  color: white;
+}
+.footer-contact-tel span {
+  color: var(--color-accent1);
+}
 .footer-contact-email {
   color: white;
 }

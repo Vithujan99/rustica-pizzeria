@@ -28,7 +28,7 @@ const Aorders = () => {
     const fetchData = async () => {
       try {
         const data = await axios
-          .get("https://rustica-pizzeria-api.onrender.com/admin/orders", {
+          .get(process.env.REACT_APP_API_URL + "/admin/orders", {
             headers: {
               "x-access-token": localStorage.getItem("token"),
             },
@@ -98,8 +98,7 @@ const Aorders = () => {
         try {
           const res = await axios
             .delete(
-              "https://rustica-pizzeria-api.onrender.com/admin/orders/" +
-                order._id,
+              process.env.REACT_APP_API_URL + "/admin/orders/" + order._id,
               {
                 headers: {
                   "x-access-token": localStorage.getItem("token"),
@@ -125,8 +124,7 @@ const Aorders = () => {
       try {
         const res = await axios
           .delete(
-            "https://rustica-pizzeria-api.onrender.com/admin/orders/" +
-              order._id,
+            process.env.REACT_APP_API_URL + "/admin/orders/" + order._id,
             {
               headers: {
                 "x-access-token": localStorage.getItem("token"),
@@ -144,7 +142,7 @@ const Aorders = () => {
       }
       try {
         const res = await axios.delete(
-          "https://rustica-pizzeria-api.onrender.com/orders/" + order._id,
+          process.env.REACT_APP_API_URL + "/orders/" + order._id,
           {
             headers: {
               "x-access-token": localStorage.getItem("token"),

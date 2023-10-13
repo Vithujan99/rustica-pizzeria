@@ -21,6 +21,9 @@
 .infoa {
   grid-area: infoa;
 }
+.navbar-tel {
+  color: white;
+}
 .infob {
   grid-area: infob;
   transition: all 0.2 ease;

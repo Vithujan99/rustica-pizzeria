@@ -51,7 +51,7 @@ const Checkout = () => {
       entryDate: new Date(),
     };
     await axios
-      .post("https://rustica-pizzeria-api.onrender.com/orders", postData)
+      .post(process.env.REACT_APP_API_URL + "/orders", postData)
       .then((res) => {
         cart.deleteCart();
         setMessageForClient(
@@ -126,7 +126,7 @@ const Checkout = () => {
     }
   }
 
-  const serverUrl = "https://rustica-pizzeria-api.onrender.com";
+  const serverUrl = process.env.REACT_APP_API_URL;
 
   const createOrder = (data) => {
     // Order is created on the server and the order id is returned

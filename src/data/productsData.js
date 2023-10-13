@@ -1,6 +1,6 @@
 import axios from "axios";
 const productsArray = await axios
-  .get("https://rustica-pizzeria-api.onrender.com/products")
+  .get(process.env.REACT_APP_API_URL + "/products")
   .then((res) => {
     return res.data;
   });
