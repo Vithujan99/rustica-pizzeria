@@ -6,7 +6,7 @@ import { ShowContext } from "../../context/ShowContext";
 import { FaBars, FaTimes, FaShoppingCart } from "react-icons/fa";
 
 import "./Navbar.css";
-import logo from "../../asset/rustica.webp";
+import logo from "../../asset/rustica-low.webp";
 import CartBar from "../CartBar/CartBar";
 
 const Navbar = () => {
@@ -61,8 +61,9 @@ const Navbar = () => {
                     className="logo"
                     src={logo}
                     alt="logo"
-                    width={200}
-                    height={55}
+                    loading="lazy"
+                    sizes="75px"
+                    srcSet={logo + " 200w"}
                   />
                 </Link>
                 <span className="info-zeit">

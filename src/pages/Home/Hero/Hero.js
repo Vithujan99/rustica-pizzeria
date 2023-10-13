@@ -35,7 +35,10 @@ const Hero = () => {
         className="hero-image"
         alt="Pizza auf Schwarzen Brett"
         src={window.innerWidth <= 800 ? imgH2 : imgH1}
-        style={{ objectFit: "cover" }}
+        loading="lazy"
+        style={{ objectFit: "cover", objectPosition: "center" }}
+        sizes="100vw"
+        srcSet={window.innerWidth <= 800 ? imgH2 + " 1600w" : imgH1 + " 1600w"}
       />
     </div>
   );
