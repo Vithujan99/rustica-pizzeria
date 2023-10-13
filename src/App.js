@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import CartProvider from "./context/CartContext";
 import ShowProvider from "./context/ShowContext";
@@ -13,8 +13,6 @@ import Checkout from "./pages/Checkout/Checkout";
 import Aorders from "./pages/Admin/Aorders/Aorders";
 import Orders from "./pages/Orders/Orders";
 import Login from "./pages/Login/Login";
-import { useEffect } from "react";
-import { useState } from "react";
 import Impressum from "./pages/FooterP/Impressum/Impressum";
 import Datenschutz from "./pages/FooterP/Datenschutz/Datenschutz";
 import ZusatzstoffeUndAllergene from "./pages/FooterP/ZusatzstoffeUndAllergene/ZusatzstoffeUndAllergene";

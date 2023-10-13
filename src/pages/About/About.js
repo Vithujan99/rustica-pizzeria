@@ -34,7 +34,7 @@ const About = () => {
       animate={{ opacity: 1, transition: { duration: 0.3 } }}
       exit={{ opacity: 0 }}
     >
-      <div className="about-page-öz">
+      <motion.div className="about-page-öz">
         <h1 className="about-page-öz-titel">ÖffnungsZeiten</h1>
         <motion.div
           className="about-page-öz-container"
@@ -113,7 +113,7 @@ const About = () => {
             </address>
           </div>
         </div>
-      </div>
+      </motion.div>
     </motion.div>
   );
 };
