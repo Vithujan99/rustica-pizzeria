@@ -17,6 +17,7 @@ import Impressum from "./pages/FooterP/Impressum/Impressum";
 import Datenschutz from "./pages/FooterP/Datenschutz/Datenschutz";
 import ZusatzstoffeUndAllergene from "./pages/FooterP/ZusatzstoffeUndAllergene/ZusatzstoffeUndAllergene";
 import AnimatedRoutes from "./AnimatedRoutes";
+import Credits from "./pages/FooterP/Credits/Credits";
 
 function App() {
   //client-id ist erlaubt in public
@@ -60,6 +61,7 @@ function App() {
                   <Route path="/checkout" element={<Checkout />} />
                   <Route path="/impressum" element={<Impressum />} />
                   <Route path="/datenschutz" element={<Datenschutz />} />
+                  <Route path="/credits" element={<Credits />} />
                   <Route
                     path="/zusatzstoffe-und-allergene"
                     element={<ZusatzstoffeUndAllergene />}
