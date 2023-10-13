@@ -61,9 +61,9 @@ const Navbar = () => {
                     className="logo"
                     src={logo}
                     alt="logo"
-                    loading="lazy"
-                    sizes="75px"
-                    srcSet={logo + " 200w"}
+                    sizes="(min-width: 820px) 200px, 170px"
+                    width={200}
+                    height={55}
                   />
                 </Link>
                 <span className="info-zeit">

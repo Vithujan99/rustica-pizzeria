@@ -33,8 +33,8 @@ const MenuContent = () => {
             alt="Pizza"
             src={PizzaImg}
             loading="lazy"
-            sizes="200px"
-            srcSet={PizzaImg + " 200w"}
+            sizes="(min-width: 820px) 200px, 100px"
+            srcSet={PizzaImg + " 499w"}
           ></img>
           <MenuItem
             key={getDataByType("Pizza")[randomPizza].id}
@@ -48,8 +48,8 @@ const MenuContent = () => {
             alt="Spaghetti"
             src={SpaghettiImg}
             loading="lazy"
-            sizes="200px"
-            srcSet={SpaghettiImg + " 200w"}
+            sizes="(min-width: 820px) 200px, 100px"
+            srcSet={SpaghettiImg + " 496w"}
           ></img>
           <MenuItem
             key={getDataByType("Spaghetti")[randomSpaghetti].id}
@@ -63,8 +63,8 @@ const MenuContent = () => {
             alt="Reisgericht"
             src={ReisgerichteImg}
             loading="lazy"
-            sizes="200px"
-            srcSet={ReisgerichteImg + " 200w"}
+            sizes="(min-width: 820px) 250px, 125px"
+            srcSet={ReisgerichteImg + " 500w"}
           ></img>
           <MenuItem
             key={getDataByType("Reisgerichte")[randomReisgerichte].id}
