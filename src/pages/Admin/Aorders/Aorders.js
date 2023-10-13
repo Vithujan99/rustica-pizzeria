@@ -70,8 +70,7 @@ const Aorders = () => {
       }
     };
     fetchData();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  });
 
   function getTotalCost(order) {
     let totalCost = 0;
@@ -107,10 +106,11 @@ const Aorders = () => {
             )
             .then((res) => {
               if (!res.data.auth) {
+                console.log(res.data.message);
                 navigate("/login");
               }
             });
-          console.log(res);
+          console.log(res.data.message);
         } catch (err) {
           console.log(err);
         }
@@ -133,6 +133,7 @@ const Aorders = () => {
           )
           .then((res) => {
             if (!res.data.auth) {
+              console.log(res.data.message);
               navigate("/login");
             }
           });
@@ -149,7 +150,7 @@ const Aorders = () => {
             },
           }
         );
-        console.log(res);
+        console.log(res.data.message);
       } catch (err) {
         console.log(err);
       }

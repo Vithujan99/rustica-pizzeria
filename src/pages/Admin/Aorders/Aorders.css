@@ -1,6 +1,7 @@
 .orders-week-container {
   margin: 2px;
   border: 4px solid black;
+  margin-bottom: 50px;
 }
 .orders-week-titel {
   width: 100%;
