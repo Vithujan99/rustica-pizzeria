@@ -51,7 +51,7 @@ const Hero = () => {
       {size ? (
         <img
           className="hero-image"
-          alt="Pizza auf Schwarzen Brett"
+          alt="Pizza auf einem Brett"
           src={HeroImg2_2048_1365}
           srcSet={
             HeroImg2_2048_1365 +
@@ -65,14 +65,13 @@ const Hero = () => {
             HeroImg2_300_200 +
             " 300w"
           }
-          loading="lazy"
           style={{ objectFit: "cover", objectPosition: "center" }}
           sizes="100vw"
         />
       ) : (
         <img
           className="hero-image"
-          alt="Pizza auf Schwarzen Brett"
+          alt="Pizza auf einem Brett"
           src={HeroImg1_2048_1365}
           srcSet={
             HeroImg1_2048_1365 +
@@ -86,7 +85,6 @@ const Hero = () => {
             HeroImg1_300_200 +
             " 300w"
           }
-          loading="lazy"
           style={{ objectFit: "cover", objectPosition: "center" }}
           sizes="100vw"
         />

@@ -13,7 +13,6 @@
 }
 .footer-contact {
   height: 100%;
-  font-size: 15px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -23,12 +22,13 @@
 .footer-contact-titel {
   font-size: 22px;
   font-weight: 500;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 .footer-contact-content {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  font-size: 16px;
+  gap: 8px;
 }
 .footer-contact-tel {
   color: white;
@@ -46,7 +46,6 @@
 }
 .footer-zahlung {
   height: 100%;
-  font-size: 15px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -56,12 +55,13 @@
 .footer-zahlung-titel {
   font-size: 22px;
   font-weight: 500;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 .footer-zahlung-content {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  font-size: 16px;
+  gap: 8px;
 }
 .footer-zahlung-content-paymethod {
   display: flex;
@@ -71,7 +71,6 @@
 }
 .footer-links {
   height: 100%;
-  font-size: 15px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -81,12 +80,13 @@
 .footer-links-titel {
   font-size: 22px;
   font-weight: 500;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 .footer-links-content {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  font-size: 16px;
+  gap: 8px;
 }
 .footer-link {
   color: white;
@@ -97,13 +97,38 @@
     display: block;
     padding: 20px 25px 25px 25px;
   }
+  .footer-contact {
+    margin-bottom: 25px;
+  }
   .footer-contact-titel {
     text-align: center;
+    font-size: 21px;
+  }
+  .footer-contact-content {
+    font-size: 15px;
+    gap: 12.5px;
+  }
+
+  .footer-zahlung {
+    margin-bottom: 25px;
   }
   .footer-zahlung-titel {
     text-align: center;
+    font-size: 21px;
+  }
+  .footer-zahlung-content {
+    font-size: 15px;
+    gap: 12.5px;
+  }
+  .footer-links {
+    margin-bottom: 25px;
   }
   .footer-links-titel {
     text-align: center;
+    font-size: 21px;
+  }
+  .footer-links-content {
+    font-size: 15px;
+    gap: 12.5px;
   }
 }
