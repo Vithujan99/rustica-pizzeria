@@ -1,5 +1,6 @@
 .search-container {
   margin: 25px;
+  margin-bottom: 0;
   padding: 25px;
   display: flex;
   flex-direction: column;

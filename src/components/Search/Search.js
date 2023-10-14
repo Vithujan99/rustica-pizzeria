@@ -1,6 +1,7 @@
-import { React, useState } from "react";
+import { React, useEffect, useState } from "react";
 import { getProductData, getProductDataByName } from "../../data/productsData";
 import MenuItem from "../../pages/Menu/MenuItems/MenuItem/MenuItem";
+import { motion } from "framer-motion";
 import { FaSearch } from "react-icons/fa";
 import "./Search.css";
 function Search() {
@@ -9,19 +10,26 @@ function Search() {
     setSearch(e.target.value);
   };
   const [searchedItem, setSearchedItem] = useState([]);
-  const handleSearchedItem = (e) => {
-    var input = e.target.value;
+  useEffect(() => {
     var product;
-    if (!isNaN(input)) {
-      product = getProductData(parseInt(input));
+    if (!isNaN(search)) {
+      product = getProductData(parseInt(search));
     } else {
-      product = getProductDataByName(input);
+      product = getProductDataByName(search);
     }
     setSearchedItem(product);
-  };
+  }, [search]);
   return (
     <div className="search-container">
-      <div class="search-bar">
+      <motion.div
+        class="search-bar"
+        animate={{ x: [-400, 50, 0] }}
+        transition={{
+          duration: 0.75,
+          ease: "easeOut",
+          times: [0, 0.55, 0.75],
+        }}
+      >
         <FaSearch size={20} color="#777" />
         <input
           className="search-input"
@@ -32,25 +40,24 @@ function Search() {
           required
           onChange={(e) => {
             handleSearch(e);
-            handleSearchedItem(e);
           }}
         />
-      </div>
-      <div className="searched-items-holder">
+      </motion.div>
+      <motion.div className="searched-items-holder">
         {search === "" || searchedItem === undefined ? (
           ""
         ) : !isNaN(search) ? (
-          <div className="searched-item" key={searchedItem.id}>
+          <motion.div className="searched-item" key={searchedItem.id}>
             <MenuItem key={searchedItem.id} data={searchedItem} />
-          </div>
+          </motion.div>
         ) : (
           searchedItem.map((item) => (
-            <div className="searched-item">
+            <motion.div className="searched-item">
               <MenuItem key={item.id} data={item} />
-            </div>
+            </motion.div>
           ))
         )}
-      </div>
+      </motion.div>
     </div>
   );
 }
