@@ -77,8 +77,8 @@ const MenuItems = () => {
 
   return (
     <div>
-      <div className="menu-titel-container">
-        <div ref={ref} className="menu-items-titel">
+      <div ref={ref} className="menu-titel-container">
+        <div className="menu-items-titel">
           <div className="white-background"></div>
           <h2 className="item-tiel">{titel}</h2>
         </div>

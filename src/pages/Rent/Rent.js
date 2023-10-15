@@ -15,13 +15,39 @@ const Rent = () => {
       <div className="rent-page-showcase">
         <div className="rent-page-showcase-section">
           <div className="rent-page-showcase-section-img-holder">
-            <img
+            <motion.img
               className="rent-page-showcase-section-img"
               src={data.slides[0].src}
               alt={data.slides[0].alt}
-            ></img>
-            <div className="rent-page-showcase-section-img-first-background" />
-            <div className="rent-page-showcase-section-img-second-background" />
+              animate={{ rotate: [25, 0] }}
+              transition={{
+                duration: 0.8,
+                ease: "easeOut",
+                times: [0, 0.8],
+              }}
+              whileHover={{
+                scale: [null, 1.25, 1.15],
+                transition: { duration: 0.3 },
+              }}
+            ></motion.img>
+            <motion.div
+              className="rent-page-showcase-section-img-first-background"
+              animate={{ rotate: [17.5, 0] }}
+              transition={{
+                duration: 0.8,
+                ease: "easeOut",
+                times: [0, 0.8],
+              }}
+            />
+            <motion.div
+              className="rent-page-showcase-section-img-second-background"
+              animate={{ rotate: [10, 0] }}
+              transition={{
+                duration: 0.8,
+                ease: "easeOut",
+                times: [0, 0.8],
+              }}
+            />
           </div>
           <p className="rent-page-showcase-section-text">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -44,22 +70,58 @@ const Rent = () => {
             culpa qui officia deserunt mollit anim id est laborum.
           </p>
           <div className="rent-page-showcase-section-img-holder">
-            <img
+            <motion.img
               className="rent-page-showcase-section-img right"
               src={data.slides[1].src}
               alt={data.slides[1].alt}
-            ></img>
-            <div className="rent-page-showcase-section-img-first-background right" />
-            <div className="rent-page-showcase-section-img-second-background right" />
+              animate={{ rotate: [-25, 0] }}
+              transition={{
+                duration: 0.8,
+                ease: "easeOut",
+                times: [0, 0.8],
+              }}
+              whileHover={{
+                scale: [null, 1.25, 1.15],
+                transition: { duration: 0.3 },
+              }}
+            ></motion.img>
+            <motion.div
+              className="rent-page-showcase-section-img-first-background right"
+              animate={{ rotate: [-17.5, 0] }}
+              transition={{
+                duration: 0.8,
+                ease: "easeOut",
+                times: [0, 0.8],
+              }}
+            />
+            <motion.div
+              className="rent-page-showcase-section-img-second-background right"
+              animate={{ rotate: [-10, 0] }}
+              transition={{
+                duration: 0.8,
+                ease: "easeOut",
+                times: [0, 0.8],
+              }}
+            />
           </div>
         </div>
         <div className="rent-page-showcase-section">
           <div className="rent-page-showcase-section-img-holder">
-            <img
+            <motion.img
               className="rent-page-showcase-section-img"
               src={data.slides[2].src}
               alt={data.slides[2].alt}
-            ></img>
+              animate={{ rotate: [25, 0] }}
+              transition={{
+                duration: 0.8,
+                ease: "easeOut",
+                times: [0, 0.8],
+              }}
+              whileHover={{
+                scale: [null, 1.3, 1.2],
+                transition: { duration: 0.3 },
+              }}
+            ></motion.img>
             <div className="rent-page-showcase-section-img-first-background" />
             <div className="rent-page-showcase-section-img-second-background third" />
           </div>
