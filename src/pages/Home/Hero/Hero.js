@@ -1,17 +1,14 @@
 import React, { useEffect, useState } from "react";
 
 import HeroImg1_2048_1365 from "../../../asset/homeHero/pizza-time-tasty-homemade-traditional-pizza-italian-recipe_2048_1365.webp";
-import HeroImg2_2048_1365 from "../../../asset/homeHero/vintage-old-rustic-cutlery-dark_2048_1365.webp";
 import HeroImg1_1859_1239 from "../../../asset/homeHero/pizza-time-tasty-homemade-traditional-pizza-italian-recipe_1859_1239.webp";
-import HeroImg2_1859_1239 from "../../../asset/homeHero/vintage-old-rustic-cutlery-dark_1859_1239.webp";
 import HeroImg1_1530_1020 from "../../../asset/homeHero/pizza-time-tasty-homemade-traditional-pizza-italian-recipe_1530_1020.webp";
 import HeroImg2_1530_1020 from "../../../asset/homeHero/vintage-old-rustic-cutlery-dark_1530_1020.webp";
 import HeroImg1_1100_733 from "../../../asset/homeHero/pizza-time-tasty-homemade-traditional-pizza-italian-recipe_1100_733.webp";
 import HeroImg2_1100_733 from "../../../asset/homeHero/vintage-old-rustic-cutlery-dark_1100_733.webp";
 import HeroImg1_300_200 from "../../../asset/homeHero/pizza-time-tasty-homemade-traditional-pizza-italian-recipe_300_200.webp";
 import HeroImg2_300_200 from "../../../asset/homeHero/vintage-old-rustic-cutlery-dark_300_200.webp";
-import HeroImg1_1920_1080 from "../../../asset/homeHero/pizza-time-tasty-homemade-traditional-pizza-italian-recipe_1920_1080.webp";
-import HeroImg2_1920_1080 from "../../../asset/homeHero/vintage-old-rustic-cutlery-dark_1920_1080.webp";
+
 import "./Hero.css";
 
 const Hero = () => {
@@ -54,7 +51,15 @@ const Hero = () => {
         <img
           className="hero-image"
           alt="Pizza auf einem Brett"
-          src={HeroImg2_1920_1080}
+          src={HeroImg2_1530_1020}
+          srcSet={
+            HeroImg2_1530_1020 +
+            " 1530w, " +
+            HeroImg2_1100_733 +
+            " 1100w, " +
+            HeroImg2_300_200 +
+            " 300w"
+          }
           style={{ objectFit: "cover", objectPosition: "center" }}
           sizes="100vw"
           rel="preload"
@@ -64,7 +69,19 @@ const Hero = () => {
         <img
           className="hero-image"
           alt="Pizza auf einem Brett"
-          src={HeroImg1_1920_1080}
+          src={HeroImg1_1530_1020}
+          srcSet={
+            HeroImg1_2048_1365 +
+            " 2048w, " +
+            HeroImg1_1859_1239 +
+            " 1859w, " +
+            HeroImg1_1530_1020 +
+            " 1530w, " +
+            HeroImg1_1100_733 +
+            " 1100w, " +
+            HeroImg1_300_200 +
+            " 300w"
+          }
           style={{ objectFit: "cover", objectPosition: "center" }}
           sizes="100vw"
           rel="preload"
