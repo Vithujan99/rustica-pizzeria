@@ -1,14 +1,10 @@
 import React, { useEffect, useState } from "react";
 
-import HeroImg1_2048_1365 from "../../../asset/homeHero/pizza-time-tasty-homemade-traditional-pizza-italian-recipe_2048_1365.webp";
 import HeroImg2_2048_1365 from "../../../asset/homeHero/vintage-old-rustic-cutlery-dark_2048_1365.webp";
-import HeroImg1_1859_1239 from "../../../asset/homeHero/pizza-time-tasty-homemade-traditional-pizza-italian-recipe_1859_1239.webp";
 import HeroImg2_1859_1239 from "../../../asset/homeHero/vintage-old-rustic-cutlery-dark_1859_1239.webp";
-import HeroImg1_1530_1020 from "../../../asset/homeHero/pizza-time-tasty-homemade-traditional-pizza-italian-recipe_1530_1020.webp";
 import HeroImg2_1530_1020 from "../../../asset/homeHero/vintage-old-rustic-cutlery-dark_1530_1020.webp";
-import HeroImg1_1100_733 from "../../../asset/homeHero/pizza-time-tasty-homemade-traditional-pizza-italian-recipe_1100_733.webp";
 import HeroImg2_1100_733 from "../../../asset/homeHero/vintage-old-rustic-cutlery-dark_1100_733.webp";
-import HeroImg1_300_200 from "../../../asset/homeHero/pizza-time-tasty-homemade-traditional-pizza-italian-recipe_300_200.webp";
+
 import HeroImg2_300_200 from "../../../asset/homeHero/vintage-old-rustic-cutlery-dark_300_200.webp";
 import "./Hero.css";
 
@@ -52,7 +48,7 @@ const Hero = () => {
         <img
           className="hero-image"
           alt="Pizza auf einem Brett"
-          src={HeroImg2_2048_1365}
+          src={HeroImg2_1100_733}
           srcSet={
             HeroImg2_2048_1365 +
             " 2048w, " +
@@ -72,17 +68,19 @@ const Hero = () => {
         <img
           className="hero-image"
           alt="Pizza auf einem Brett"
-          src={HeroImg1_2048_1365}
+          src={
+            "https://i.ibb.co/qnFh98d/pizza-time-tasty-homemade-traditional-pizza-italian-recipe-1530-1020.webp"
+          }
           srcSet={
-            HeroImg1_2048_1365 +
+            "https://i.ibb.co/8cRGHD8/pizza-time-tasty-homemade-traditional-pizza-italian-recipe-2048-1365.webp" +
             " 2048w, " +
-            HeroImg1_1859_1239 +
+            "https://i.ibb.co/6s8vw0b/pizza-time-tasty-homemade-traditional-pizza-italian-recipe-1859-1239.webp" +
             " 1859w, " +
-            HeroImg1_1530_1020 +
+            "https://i.ibb.co/qnFh98d/pizza-time-tasty-homemade-traditional-pizza-italian-recipe-1530-1020.webp" +
             " 1530w, " +
-            HeroImg1_1100_733 +
+            "https://i.ibb.co/pj6BHCW/pizza-time-tasty-homemade-traditional-pizza-italian-recipe-1100-733.webp" +
             " 1100w, " +
-            HeroImg1_300_200 +
+            "https://i.ibb.co/RCC0yhj/pizza-time-tasty-homemade-traditional-pizza-italian-recipe-300-200.webp" +
             " 300w"
           }
           style={{ objectFit: "cover", objectPosition: "center" }}
