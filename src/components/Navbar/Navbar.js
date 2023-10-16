@@ -64,6 +64,8 @@ const Navbar = () => {
                     sizes="(min-width: 820px) 200px, 170px"
                     width={200}
                     height={55}
+                    rel="preload"
+                    loading="eager"
                   />
                 </Link>
                 <span className="info-zeit">
