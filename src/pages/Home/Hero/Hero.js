@@ -52,8 +52,15 @@ const Hero = () => {
         <img
           className="hero-image"
           alt="Pizza auf einem Brett"
-          src={HeroImg2_1100_733}
-          srcSet={HeroImg2_1100_733 + " 1100w, " + HeroImg2_300_200 + " 300w"}
+          src={HeroImg2_1530_1020}
+          srcSet={
+            HeroImg2_1530_1020 +
+            " 1530w, " +
+            HeroImg2_1100_733 +
+            " 1100w, " +
+            HeroImg2_300_200 +
+            " 300w"
+          }
           style={{ objectFit: "cover", objectPosition: "center" }}
           sizes="100vw"
         />
