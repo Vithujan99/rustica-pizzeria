@@ -22,7 +22,8 @@ import Credits from "./pages/FooterP/Credits/Credits";
 function App() {
   //client-id ist erlaubt in public
   const initialOptions = {
-    "client-id": process.env.REACT_APP_CLIENT_ID,
+    "client-id":
+      "AQm3IT-QZ9zIZ3b1zlPy-SalBw9UD-6X1M6fXjWv_oymBhg5jkJhaoB3H2f9k68BHTb5jg4ywuVq2aIn",
     currency: "EUR",
     intent: "capture",
     "disable-funding": "credit,card,giropay,sepa,sofort",

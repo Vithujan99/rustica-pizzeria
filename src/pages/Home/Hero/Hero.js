@@ -52,8 +52,12 @@ const Hero = () => {
         <img
           className="hero-image"
           alt="Pizza auf einem Brett"
-          src={HeroImg2_1530_1020}
+          src={HeroImg2_1100_733}
           srcSet={
+            HeroImg2_2048_1365 +
+            " 2048w, " +
+            HeroImg2_1859_1239 +
+            " 1859w, " +
             HeroImg2_1530_1020 +
             " 1530w, " +
             HeroImg2_1100_733 +
