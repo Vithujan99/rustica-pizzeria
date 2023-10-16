@@ -27,7 +27,12 @@ const Rent = () => {
               }}
               whileHover={{
                 scale: [null, 1.25, 1.15],
-                transition: { duration: 0.3 },
+                transition: {
+                  duration: 0.3,
+                  type: "spring",
+                  stiffness: 400,
+                  damping: 10,
+                },
               }}
             ></motion.img>
             <motion.div
@@ -82,7 +87,12 @@ const Rent = () => {
               }}
               whileHover={{
                 scale: [null, 1.25, 1.15],
-                transition: { duration: 0.3 },
+                transition: {
+                  duration: 0.3,
+                  type: "spring",
+                  stiffness: 400,
+                  damping: 10,
+                },
               }}
             ></motion.img>
             <motion.div
@@ -118,8 +128,13 @@ const Rent = () => {
                 times: [0, 0.8],
               }}
               whileHover={{
-                scale: [null, 1.3, 1.2],
-                transition: { duration: 0.3 },
+                scale: [null, 1.25, 1.15],
+                transition: {
+                  duration: 0.3,
+                  type: "spring",
+                  stiffness: 400,
+                  damping: 10,
+                },
               }}
             ></motion.img>
             <div className="rent-page-showcase-section-img-first-background" />

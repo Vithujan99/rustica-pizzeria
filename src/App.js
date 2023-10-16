@@ -38,7 +38,8 @@ function App() {
       location.pathname === "/login" ||
       location.pathname === "/impressum" ||
       location.pathname === "/datenschutz" ||
-      location.pathname === "/zusatzstoffe-und-allergene"
+      location.pathname === "/zusatzstoffe-und-allergene" ||
+      location.pathname === "/credits"
     ) {
       setShowNavbar(false);
     } else {
