@@ -6,7 +6,6 @@ import { ShowContext } from "../../context/ShowContext";
 import { FaBars, FaTimes, FaShoppingCart } from "react-icons/fa";
 
 import "./Navbar.css";
-import logo from "../../asset/rustica-low.webp";
 import CartBar from "../CartBar/CartBar";
 
 const Navbar = () => {
@@ -59,7 +58,7 @@ const Navbar = () => {
                 <Link className={"nav-link info-logo"} to="/">
                   <img
                     className="logo"
-                    src={logo}
+                    src={"../../asset/rustica-low.webp"}
                     alt="logo"
                     sizes="(min-width: 820px) 200px, 170px"
                     width={200}

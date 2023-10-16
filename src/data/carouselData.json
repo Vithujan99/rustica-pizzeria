@@ -1,15 +1,15 @@
 {
   "slides": [
     {
-      "src": "https://picsum.photos/seed/img1/800/500",
+      "src": "https://picsum.photos/seed/webp1/800/500",
       "alt": "Image 1 for carousel"
     },
     {
-      "src": "https://picsum.photos/seed/img2/800/500",
+      "src": "https://picsum.photos/seed/webp2/800/500",
       "alt": "Image 2 for carousel"
     },
     {
-      "src": "https://picsum.photos/seed/img3/800/500",
+      "src": "https://picsum.photos/seed/webp3/800/500",
       "alt": "Image 3 for carousel"
     }
   ]
