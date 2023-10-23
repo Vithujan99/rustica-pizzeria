@@ -40,6 +40,13 @@
   display: flex;
   flex-direction: row;
 }
+.special-info {
+  width: 100%;
+  color: var(--color-accent1);
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center;
+}
 .all-Item-buttons {
   display: none;
 }
@@ -112,6 +119,7 @@
   height: 275px;
   background-color: rgba(255, 255, 255, 1);
   border-radius: 10%;
+  cursor: pointer;
 }
 @media (max-height: 637px) {
   .item-button {
@@ -147,7 +155,7 @@
 @media (max-height: 450px) {
   .item-holder {
     flex-direction: column;
-    align-items: flex-start;
+    justify-content: flex-start;
     gap: 10px;
   }
   .menu-item {
@@ -220,7 +228,7 @@
     padding: 7.5px;
     display: flex;
     flex-direction: column;
-    overflow-y: scroll;
+    overflow: auto;
     z-index: 503;
     background-color: white;
     transition: all 0.3s ease;
@@ -273,12 +281,15 @@
     font-size: 40px;
     width: 300px;
   }
+  .special-info {
+    font-size: 28px;
+  }
 }
 /*Navbar is static*/
 @media (max-width: 800px) {
   .item-holder {
     flex-direction: column;
-    align-items: flex-start;
+    justify-content: flex-start;
     gap: 15px;
   }
   .menu-item {
@@ -320,6 +331,9 @@
     font-size: 30px;
     width: 250px;
   }
+  .special-info {
+    font-size: 22px;
+  }
 }
 
 /*Für Galaxy Fold*/
@@ -328,6 +342,9 @@
     margin-top: 50px;
     font-size: 20px;
     width: 150px;
+  }
+  .special-info {
+    font-size: 18px;
   }
   .all-Item-buttons {
     width: 225px;

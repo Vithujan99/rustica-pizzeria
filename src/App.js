@@ -18,6 +18,9 @@ import Datenschutz from "./pages/FooterP/Datenschutz/Datenschutz";
 import ZusatzstoffeUndAllergene from "./pages/FooterP/ZusatzstoffeUndAllergene/ZusatzstoffeUndAllergene";
 import AnimatedRoutes from "./AnimatedRoutes";
 import Credits from "./pages/FooterP/Credits/Credits";
+import { LocalizationProvider } from "@mui/x-date-pickers";
+import { AdapterMoment } from "@mui/x-date-pickers/AdapterMoment";
+import "moment/locale/de";
 
 function App() {
   //client-id ist erlaubt in public
@@ -49,35 +52,37 @@ function App() {
   return (
     //Everything hass access to the value inside ShppingCartProvider
     <PayPalScriptProvider options={initialOptions}>
-      <TimeProvider>
-        <CartProvider>
-          <IngredientsProvider>
-            <ServiceProvider>
-              <ShowProvider>
-                {showNavbar && <Navbar />}
-                <AskService />
-                <AnimatedRoutes />
-                <Routes>
-                  {/*public routes*/}
-                  <Route path="/checkout" element={<Checkout />} />
-                  <Route path="/impressum" element={<Impressum />} />
-                  <Route path="/datenschutz" element={<Datenschutz />} />
-                  <Route path="/credits" element={<Credits />} />
-                  <Route
-                    path="/zusatzstoffe-und-allergene"
-                    element={<ZusatzstoffeUndAllergene />}
-                  />
-                  <Route path="/login" element={<Login />} />
-                  {/*private routes*/}
-                  <Route path="/admin/orders" element={<Aorders />} />
-                  <Route path="/orders" element={<Orders />} />
-                </Routes>
-                {showNavbar && <Footer />}
-              </ShowProvider>
-            </ServiceProvider>
-          </IngredientsProvider>
-        </CartProvider>
-      </TimeProvider>
+      <LocalizationProvider dateAdapter={AdapterMoment} adapterLocale="de">
+        <TimeProvider>
+          <CartProvider>
+            <IngredientsProvider>
+              <ServiceProvider>
+                <ShowProvider>
+                  {showNavbar && <Navbar />}
+                  <AskService />
+                  <AnimatedRoutes />
+                  <Routes>
+                    {/*public routes*/}
+                    <Route path="/checkout" element={<Checkout />} />
+                    <Route path="/impressum" element={<Impressum />} />
+                    <Route path="/datenschutz" element={<Datenschutz />} />
+                    <Route path="/credits" element={<Credits />} />
+                    <Route
+                      path="/zusatzstoffe-und-allergene"
+                      element={<ZusatzstoffeUndAllergene />}
+                    />
+                    <Route path="/login" element={<Login />} />
+                    {/*private routes*/}
+                    <Route path="/admin/orders" element={<Aorders />} />
+                    <Route path="/orders" element={<Orders />} />
+                  </Routes>
+                  {showNavbar && <Footer />}
+                </ShowProvider>
+              </ServiceProvider>
+            </IngredientsProvider>
+          </CartProvider>
+        </TimeProvider>
+      </LocalizationProvider>
     </PayPalScriptProvider>
   );
 }

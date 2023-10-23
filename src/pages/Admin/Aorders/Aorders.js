@@ -26,6 +26,7 @@ const Aorders = () => {
 
   useEffect(() => {
     const fetchData = async () => {
+      console.log("Hallo");
       try {
         const data = await axios
           .get(process.env.REACT_APP_API_URL + "/admin/orders", {
@@ -70,7 +71,8 @@ const Aorders = () => {
       }
     };
     fetchData();
-  });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   function getTotalCost(order) {
     let totalCost = 0;

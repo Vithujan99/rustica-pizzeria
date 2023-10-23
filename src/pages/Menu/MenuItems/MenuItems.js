@@ -1,4 +1,4 @@
-import React, { useState, useRef, useContext } from "react";
+import React, { useState, useRef, useContext, useEffect } from "react";
 import { CartContext } from "../../../context/CartContext";
 import { ShowContext } from "../../../context/ShowContext";
 import { getDataByType } from "../../../data/productsData";
@@ -50,6 +50,9 @@ const MenuItems = () => {
   const show = useContext(ShowContext);
   const [titel, handleTitel] = useState("Pizza");
   const [items, handleItems] = useState(getDataByType("Pizza"));
+  const [specialInfo, setSpecialInfo] = useState(
+    "Alle Pizzen mit Tomatensauce, Käse und Oregano."
+  );
   const setItems = (clickedItem) => {
     //normalerweiße handleItems(getDataByType(clickedItem)); Bis die Daten gefüült sind benutzen wir:
     handleItems(
@@ -74,6 +77,26 @@ const MenuItems = () => {
   const handleRef = () => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
   };
+
+  useEffect(() => {
+    if (titel === "Pizza") {
+      setSpecialInfo("Alle Pizzen mit Tomatensauce, Käse und Oregano");
+    } else if (titel === "Salate") {
+      setSpecialInfo(
+        "(Salat mit Cocktail, Öl & Essig, Joghurtsoße) Alle Salate mit Pizzabrötchen und Kräutercreme"
+      );
+    } else if (titel === "Rustica Spezial Teil 1") {
+      setSpecialInfo("mit Reis als Beilage");
+    } else if (titel === "Fitnessküche") {
+      setSpecialInfo(
+        "Salate aus der Fitnessküche werden mit Pizzabrötchen geliefert…"
+      );
+    } else if (titel === "Carne") {
+      setSpecialInfo("Alle Gerichte mit Pommes und kleinem Salat");
+    } else {
+      setSpecialInfo("");
+    }
+  }, [titel]);
 
   return (
     <div>
@@ -152,6 +175,9 @@ const MenuItems = () => {
             />
             <div className="items-in-shop">{cart.getTotalCount()}</div>
           </div>
+
+          <h3 className="special-info">{specialInfo}</h3>
+
           {items.map((item) => (
             <div key={item.id} className="menu-item">
               <MenuItem data={item} />

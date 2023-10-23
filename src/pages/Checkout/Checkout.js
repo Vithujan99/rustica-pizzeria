@@ -7,12 +7,96 @@ import CartCard from "../../components/CartBar/CartCard/CartCard";
 import { ServiceContext } from "../../context/ServiceContext";
 import { formatCurrency } from "../../utilities/formatCurrency";
 import { PayPalButtons } from "@paypal/react-paypal-js";
+import { DateTimePicker } from "@mui/x-date-pickers";
+import Holidays from "date-holidays";
+import moment from "moment/moment";
 import "./Checkout.css";
 
 const Checkout = () => {
   const cart = useContext(CartContext);
   const serv = useContext(ServiceContext);
   const time = useContext(TimeContext);
+  const today = moment();
+
+  var endKalander = moment(today)
+    .startOf("day")
+    .subtract(1, "minutes")
+    .add(4, "days");
+  console.log(today);
+  function calcDate() {
+    var hd = new Holidays("DE", "nw");
+    var Now = new Date();
+    const time = Now.getHours() * 100 + Now.getMinutes();
+    if (hd.isHoliday(Now)) {
+      if (time < 1700) {
+        return moment(today).startOf("day").add(17, "hour").add(30, "minute");
+      } else if (time <= 2230 && time >= 1700) {
+        return moment(today).add(30, "minute");
+      } else {
+        return moment(today).startOf("day");
+      }
+    } else if (Now.getDay() === 1 || Now.getDay() === 2) {
+      if (time < 1730) {
+        return moment(today).startOf("day").add(18, "hour");
+      } else if (time <= 2230 && time >= 1730) {
+        return moment(today).add(30, "minute");
+      } else {
+        if (Now.getDay() === 1) {
+          return moment(today).startOf("day").add(1, "day").add(18, "hour");
+        } else {
+          return moment(today).startOf("day").add(1, "day").add(12, "hour");
+        }
+      }
+    } else if (Now.getDay() === 3 || Now.getDay() === 4) {
+      if (time < 1130) {
+        return moment(today).startOf("day").add(12, "hour");
+      } else if (time <= 1430 && time >= 1130) {
+        return moment(today).add(30, "minute");
+      } else if (time < 1730) {
+        return moment(today).startOf("day").add(18, "hour");
+      } else if (time <= 2230 && time >= 1730) {
+        return moment(today).add(30, "minute");
+      } else {
+        return moment(today).startOf("day").add(1, "day").add(12, "hour");
+      }
+    } else if (Now.getDay() === 5) {
+      if (time < 1130) {
+        return moment(today).startOf("day").add(12, "hour");
+      } else if (time <= 1430 && time >= 1130) {
+        return moment(today).add(30, "minute");
+      } else if (time < 1730) {
+        return moment(today).startOf("day").add(18, "hour");
+      } else if (time <= 2300 && time >= 1730) {
+        return moment(today).add(30, "minute");
+      } else {
+        return moment(today)
+          .startOf("day")
+          .add(1, "day")
+          .add(17, "hour")
+          .add(30, "minute");
+      }
+    } else if (Now.getDay() === 6) {
+      if (time < 1700) {
+        return moment(today).startOf("day").add(17, "hour").add(30, "minute");
+      } else if (time <= 2300 && time >= 1700) {
+        return moment(today).add(30, "minute");
+      } else {
+        return moment(today)
+          .startOf("day")
+          .add(1, "day")
+          .add(17, "hour")
+          .add(30, "minute");
+      }
+    } else if (Now.getDay() === 0) {
+      if (time < 1700) {
+        return moment(today).startOf("day").add(17, "hour").add(30, "minute");
+      } else if (time <= 2230 && time >= 1700) {
+        return moment(today).add(30, "minute");
+      } else {
+        return moment(today).startOf("day").add(1, "day").add(18, "hour");
+      }
+    }
+  }
 
   const [vorname, setVorname] = useState("");
   const [nachname, setNachname] = useState("");
@@ -20,6 +104,8 @@ const Checkout = () => {
   const [straße, setStraße] = useState("");
   const [hnr, setHnr] = useState("");
   const [stadt, setStadt] = useState("");
+  const [date, setDate] = useState(calcDate());
+  const [dateError, setDateError] = useState(false);
   const [errorText, setErrorText] = useState(false);
   const [anmerkung, setAnmerkung] = useState("");
   const [paymentMethod, setPaymentMethod] = useState("");
@@ -48,7 +134,7 @@ const Checkout = () => {
       service: serv.service,
       paymentMethod: paymentMethod,
       ordered_items: cart.items,
-      entryDate: new Date(),
+      entryDate: new Date(date._d.toString()),
     };
     await axios
       .post(process.env.REACT_APP_API_URL + "/orders", postData)
@@ -73,7 +159,12 @@ const Checkout = () => {
   };
 
   function checkAbholData() {
-    if (vorname.length === 0 || nachname.length === 0 || telnr.length === 0) {
+    if (
+      vorname.length === 0 ||
+      nachname.length === 0 ||
+      telnr.length === 0 ||
+      dateError
+    ) {
       setPaymentMethod("");
       return false;
     } else {
@@ -81,7 +172,12 @@ const Checkout = () => {
     }
   }
   function clickCheckAbholData() {
-    if (vorname.length === 0 || nachname.length === 0 || telnr.length === 0) {
+    if (
+      vorname.length === 0 ||
+      nachname.length === 0 ||
+      telnr.length === 0 ||
+      dateError
+    ) {
       setPaymentMethod("");
       setFormError(true);
       return false;
@@ -172,6 +268,235 @@ const Checkout = () => {
     //.then((data) => console.log(data));
   };
 
+  function testTime(data, clockType) {
+    var hd = new Holidays("DE", "nw");
+    var tH = today.hour();
+    var tM = today.minute();
+    var day = data._d.getDay();
+    if (clockType === "hours") {
+      var timeH = data._d.getHours();
+      if (hd.isHoliday(date)) {
+        if (timeH <= 22 && timeH >= 17) {
+          if (today.day() !== day) {
+            return true;
+          } else if (timeH < tH + parseInt((tM + 30) / 60)) {
+            return false;
+          } else if (tH * 100 + tM > 2200) {
+            return false;
+          } else {
+            return true;
+          }
+        }
+      } else if (day === 1 || day === 2) {
+        if (timeH <= 22 && timeH >= 18) {
+          if (today.day() !== day) {
+            return true;
+          } else if (timeH < tH + parseInt((tM + 30) / 60)) {
+            return false;
+          } else if (tH * 100 + tM > 2200) {
+            return false;
+          } else {
+            return true;
+          }
+        }
+      } else if (day === 3 || day === 4) {
+        if (timeH <= 14 && timeH >= 12) {
+          if (today.day() !== day) {
+            return true;
+          } else if (timeH < tH + parseInt((tM + 30) / 60)) {
+            return false;
+          } else if (tH * 100 + tM > 1400) {
+            return false;
+          } else {
+            return true;
+          }
+        } else if (timeH <= 22 && timeH >= 18) {
+          if (today.day() !== day) {
+            return true;
+          } else if (timeH < tH + parseInt((tM + 30) / 60)) {
+            return false;
+          } else if (tH * 100 + tM > 2200) {
+            return false;
+          } else {
+            return true;
+          }
+        }
+      } else if (day === 5) {
+        if (timeH <= 14 && timeH >= 12) {
+          if (today.day() !== day) {
+            return true;
+          } else if (timeH < tH + parseInt((tM + 30) / 60)) {
+            return false;
+          } else if (tH * 100 + tM > 1400) {
+            return false;
+          } else {
+            return true;
+          }
+        } else if (timeH <= 23 && timeH >= 18) {
+          if (today.day() !== day) {
+            return true;
+          } else if (timeH < tH + parseInt((tM + 30) / 60)) {
+            return false;
+          } else if (tH * 100 + tM > 2300) {
+            return false;
+          } else {
+            return true;
+          }
+        }
+      } else if (day === 6) {
+        if (timeH <= 23 && timeH >= 17) {
+          if (today.day() !== day) {
+            return true;
+          } else if (timeH < tH + parseInt((tM + 30) / 60)) {
+            return false;
+          } else if (tH * 100 + tM > 2300) {
+            return false;
+          } else {
+            return true;
+          }
+        }
+      } else if (day === 0) {
+        if (timeH <= 22 && timeH >= 17) {
+          if (today.day() !== day) {
+            return true;
+          } else if (timeH < tH + parseInt((tM + 30) / 60)) {
+            return false;
+          } else if (tH * 100 + tM > 2200) {
+            return false;
+          } else {
+            return true;
+          }
+        }
+      } else {
+        return false;
+      }
+    } else if (clockType === "minutes") {
+      var time = data._d.getHours() * 100 + data._d.getMinutes();
+      console.log(time);
+      if (hd.isHoliday(date)) {
+        if (time <= 2230 && time >= 1730) {
+          if (today.day() !== day) {
+            return true;
+          } else if (
+            time <
+            (tH + parseInt((tM + 30) / 60)) * 100 + ((tM + 30) % 60)
+          ) {
+            return false;
+          } else if (tH * 100 + tM > 2230) {
+            return false;
+          } else {
+            return true;
+          }
+        }
+      } else if (day === 1 || day === 2) {
+        if (time <= 2230 && time >= 1800) {
+          if (today.day() !== day) {
+            return true;
+          } else if (
+            time <
+            (tH + parseInt((tM + 30) / 60)) * 100 + ((tM + 30) % 60)
+          ) {
+            return false;
+          } else if (tH * 100 + tM > 2230) {
+            return false;
+          } else {
+            return true;
+          }
+        }
+      } else if (day === 3 || day === 4) {
+        if (time <= 1430 && time >= 1200) {
+          if (today.day() !== day) {
+            return true;
+          } else if (
+            time <
+            (tH + parseInt((tM + 30) / 60)) * 100 + ((tM + 30) % 60)
+          ) {
+            return false;
+          } else if (tH * 100 + tM > 1430) {
+            return false;
+          } else {
+            return true;
+          }
+        } else if (time <= 2230 && time >= 1800) {
+          if (today.day() !== day) {
+            return true;
+          } else if (
+            time <
+            (tH + parseInt((tM + 30) / 60)) * 100 + ((tM + 30) % 60)
+          ) {
+            return false;
+          } else if (tH * 100 + tM > 2230) {
+            return false;
+          } else {
+            return true;
+          }
+        }
+      } else if (day === 5) {
+        if (time <= 1430 && time >= 1200) {
+          if (today.day() !== day) {
+            return true;
+          } else if (
+            time <
+            (tH + parseInt((tM + 30) / 60)) * 100 + ((tM + 30) % 60)
+          ) {
+            return false;
+          } else if (tH * 100 + tM > 1430) {
+            return false;
+          } else {
+            return true;
+          }
+        } else if (time <= 2300 && time >= 1800) {
+          if (today.day() !== day) {
+            return true;
+          } else if (
+            time <
+            (tH + parseInt((tM + 30) / 60)) * 100 + ((tM + 30) % 60)
+          ) {
+            return false;
+          } else if (tH * 100 + tM > 2300) {
+            return false;
+          } else {
+            return true;
+          }
+        }
+      } else if (day === 6) {
+        if (time <= 2300 && time >= 1730) {
+          if (today.day() !== day) {
+            return true;
+          } else if (
+            time <
+            (tH + parseInt((tM + 30) / 60)) * 100 + ((tM + 30) % 60)
+          ) {
+            return false;
+          } else if (tH * 100 + tM > 2300) {
+            return false;
+          } else {
+            return true;
+          }
+        }
+      } else if (day === 0) {
+        if (time <= 2230 && time >= 1730) {
+          if (today.day() !== day) {
+            return true;
+          } else if (
+            time <
+            (tH + parseInt((tM + 30) / 60)) * 100 + ((tM + 30) % 60)
+          ) {
+            return false;
+          } else if (tH * 100 + tM > 2200) {
+            return false;
+          } else {
+            return true;
+          }
+        }
+      } else {
+        return false;
+      }
+    } else {
+      return true;
+    }
+  }
+
   return (
     <div className="checkout-page">
       <div className="checkout-buyform">
@@ -201,6 +526,32 @@ const Checkout = () => {
 
         {serv.service === "Abholung" && cart.getTotalCost() >= 8.0 ? (
           <form className="checkout-form-holder">
+            <div className="checkout-form-date">
+              <label>
+                <h2>Abholzeit</h2>
+              </label>
+              <DateTimePicker
+                value={date}
+                timeSteps={{ minutes: 1 }}
+                minDateTime={today}
+                maxDateTime={endKalander}
+                shouldDisableTime={(data, clockType) => {
+                  return !testTime(data, clockType);
+                }}
+                onChange={(newValue) => setDate(newValue)}
+                onError={(error) =>
+                  error ? setDateError(true) : setDateError(false)
+                }
+              />
+              {formError && dateError ? (
+                <p className="date-error-text">
+                  Keine Abholung um diese Zeit möglich
+                </p>
+              ) : (
+                ""
+              )}
+            </div>
+            <h2>Info</h2>
             <div className="checkout-form-name">
               <input
                 name="vorname"
@@ -242,6 +593,7 @@ const Checkout = () => {
               value={telnr}
               onChange={(e) => setTelnr(e.target.value)}
             ></input>
+            <h2 className="payment-select-title">Zahlungsart</h2>
             <div className="payment-selct">
               <button
                 className={
@@ -297,6 +649,31 @@ const Checkout = () => {
         ) : serv.service === "Lieferung" &&
           cart.getTotalCostNoDrinks() >= 15.0 ? (
           <form className="checkout-form-holder">
+            <div className="checkout-form-date">
+              <label>
+                <h2>Abholzeit</h2>
+              </label>
+              <DateTimePicker
+                value={date}
+                timeSteps={{ minutes: 1 }}
+                minDateTime={today}
+                maxDateTime={endKalander}
+                shouldDisableTime={(data, clockType) => {
+                  return !testTime(data, clockType);
+                }}
+                onChange={(newValue) => setDate(newValue)}
+                onError={(error) =>
+                  error ? setDateError(true) : setDateError(false)
+                }
+              />
+              {formError && dateError ? (
+                <p className="date-error-text">
+                  Keine Abholung um diese Zeit möglich
+                </p>
+              ) : (
+                ""
+              )}
+            </div>
             <h2>Lieferadresse</h2>
             <div className="checkout-form-name">
               <input
@@ -416,6 +793,7 @@ const Checkout = () => {
                 onChange={(e) => setAnmerkung(e.target.value)}
               ></textarea>
             </div>
+            <h2 className="payment-select-title">Zahlungsart</h2>
             <div className="payment-selct">
               <button
                 className={
@@ -484,6 +862,7 @@ const Checkout = () => {
                 </p>
               )}
               <div className="checkout-cards-holder">
+                <h2 className="checkout-cards-holder-titel">Warenkorb</h2>
                 {cart.items.map((currentProduct) => (
                   <CartCard
                     key={JSON.stringify(currentProduct)}

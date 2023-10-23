@@ -12,6 +12,7 @@ import { BsPlus } from "react-icons/bs";
 
 import "./MenuItem.css";
 import "./MenuZusatz.css";
+import { getTypeById } from "../../../../data/productsData";
 
 export const MenuItem = ({ data }) => {
   const cart = useContext(CartContext);
@@ -83,7 +84,11 @@ export const MenuItem = ({ data }) => {
           <BsPlus size={30} />
         </div>
         <div className="item-name">
-          <span>{("0" + data.id).slice(-3)}.</span>
+          {getTypeById(data.id) === "Getränk außer Haus" ? (
+            <span></span>
+          ) : (
+            <span>{("0" + data.id).slice(-3)}.</span>
+          )}
           {data.name.toUpperCase()}
           <span className="item-stoff">
             {data.stoff === undefined ? "" : "*" + data.stoff}

@@ -59,7 +59,8 @@
 @media (max-height: 450px) {
   .item-card {
     position: relative;
-    padding: 0;
+    padding: 2.5px;
+    padding-top: 5px;
     height: auto;
     min-height: 75px;
     display: flex;
@@ -131,7 +132,8 @@
 @media (max-width: 800px) {
   .item-card {
     position: relative;
-    padding: 0;
+    padding: 2.5px;
+    padding-top: 5px;
     height: auto;
     min-height: 75px;
     display: flex;

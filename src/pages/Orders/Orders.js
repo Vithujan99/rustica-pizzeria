@@ -15,17 +15,6 @@ const Admin = () => {
   const [orders, setOrders] = useState([]);
   const [action, setAction] = useState([]);
   useEffect(() => {
-    axios
-      .get(process.env.REACT_APP_API_URL + "/orders", {
-        headers: {
-          "x-access-token": localStorage.getItem("token"),
-        },
-      })
-      .then((res) => {
-        if (!res.data.auth) {
-          navigate("/login");
-        }
-      });
     //Code above only for auth
     const interval = setInterval(() => {
       // Perform some repeated action
@@ -45,7 +34,7 @@ const Admin = () => {
             });
           setOrders(
             await data.sort(function (a, b) {
-              return new Date(b.entryDate) - new Date(a.entryDate);
+              return new Date(a.entryDate) - new Date(b.entryDate);
             })
           );
         } catch (error) {
