@@ -22,7 +22,6 @@ const Checkout = () => {
     .startOf("day")
     .subtract(1, "minutes")
     .add(4, "days");
-  console.log(today);
   function calcDate() {
     var hd = new Holidays("DE", "nw");
     var Now = new Date();
@@ -372,7 +371,6 @@ const Checkout = () => {
       }
     } else if (clockType === "minutes") {
       var time = data._d.getHours() * 100 + data._d.getMinutes();
-      console.log(time);
       if (hd.isHoliday(date)) {
         if (time <= 2230 && time >= 1730) {
           if (today.day() !== day) {
@@ -550,6 +548,7 @@ const Checkout = () => {
               ) : (
                 ""
               )}
+              <p>(Bei Bleche 2 Std. Vorbereitungszeit nötig)</p>
             </div>
             <h2>Info</h2>
             <div className="checkout-form-name">
@@ -673,6 +672,7 @@ const Checkout = () => {
               ) : (
                 ""
               )}
+              <p>(Bei Bleche 2 Std. Vorbereitungszeit nötig)</p>
             </div>
             <h2>Lieferadresse</h2>
             <div className="checkout-form-name">

@@ -119,7 +119,7 @@
   height: 275px;
   background-color: rgba(255, 255, 255, 1);
   border-radius: 10%;
-  cursor: pointer;
+  cursor: default;
 }
 @media (max-height: 637px) {
   .item-button {
@@ -164,6 +164,7 @@
     background-color: rgba(255, 255, 255, 1);
     margin: 0;
     border-radius: 15px;
+    cursor: pointer;
   }
   .item-holder-shopping-cart-holder {
     display: block;
@@ -298,6 +299,7 @@
     background-color: rgba(255, 255, 255, 1);
     margin: 0;
     border-radius: 15px;
+    cursor: pointer;
   }
   .item-holder-shopping-cart-holder {
     display: block;

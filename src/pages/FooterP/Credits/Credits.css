@@ -1,0 +1,61 @@
+.credits-page {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+.credits-p-content {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid gray;
+}
+.credits-p-section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: rgba(220, 220, 220, 0.33);
+  border: 2px solid gray;
+}
+.credits-p-image {
+  flex: 1;
+  min-width: 250px;
+  background-color: white;
+  padding: 20px;
+}
+.credits-p-credit {
+  flex: 1;
+  min-width: 250px;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  font-weight: 600;
+}
+.credits-p-credit a {
+  color: blueviolet;
+  text-align: center;
+}
+.credits-p-credit a:hover {
+  color: rgb(9, 54, 252);
+}
+@media (max-width: 400px) {
+  .credits-page {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+  }
+  .credits-p-content {
+    margin-top: 20px;
+  }
+  .credits-p-image {
+    padding: 10px;
+  }
+  .credits-p-credit {
+    font-size: 20px;
+    font-weight: 600;
+  }
+}

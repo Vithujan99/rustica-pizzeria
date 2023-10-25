@@ -81,7 +81,7 @@ export const MenuItem = ({ data }) => {
         }}
       >
         <div className="add-icon">
-          <BsPlus size={30} />
+          <BsPlus className="add-icon-r" size={30} />
         </div>
         <div className="item-name">
           {getTypeById(data.id) === "Getränk außer Haus" ? (

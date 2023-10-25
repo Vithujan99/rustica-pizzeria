@@ -134,7 +134,7 @@ const CartBar = () => {
                       </div>
                     )
                   ) : serv.testPlz() ? (
-                    cart.getTotalCost() >= 15.0 ? (
+                    cart.getTotalCostNoDrinks() >= 15.0 ? (
                       <NavLink
                         className="barFooterKaufen-button"
                         to="/checkout"

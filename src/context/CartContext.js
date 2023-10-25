@@ -218,7 +218,7 @@ export function CartProvider({ children }) {
     // eslint-disable-next-line array-callback-return
     cartProducts.map((product) => {
       const type = getTypeById(product.id);
-      if (type !== "Drinks") {
+      if (type !== "Getränk außer Haus") {
         const productData = getProductData(product.id);
 
         let ingCost = 0;
