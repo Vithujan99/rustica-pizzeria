@@ -53,6 +53,30 @@
   width: 0;
   transition: height 0.5s, width 0.5s 0.5s;
 }
+@media (max-height: 450px) {
+  .home-rent {
+    padding-bottom: 50px;
+  }
+  .home-rent-titel-holder {
+    margin-bottom: 25px;
+  }
+  .home-rent-titel-holder:before,
+  .home-rent-titel-holder:after {
+    display: none;
+  }
+}
+@media (max-width: 800px) {
+  .home-rent {
+    padding-bottom: 50px;
+  }
+  .home-rent-titel-holder {
+    margin-bottom: 25px;
+  }
+  .home-rent-titel-holder:before,
+  .home-rent-titel-holder:after {
+    display: none;
+  }
+}
 @media (max-width: 500px) {
   .home-rent-titel-holder {
     width: 250px;
@@ -60,11 +84,5 @@
   }
   .home-rent-titel {
     font-size: 35px;
-  }
-  .home-rent-titel-holder:before {
-    width: 251px;
-  }
-  .home-rent-titel-holder:after {
-    width: 251px;
   }
 }

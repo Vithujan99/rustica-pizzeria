@@ -109,6 +109,15 @@
   border: 2px solid var(--color-four);
 }
 @media (max-height: 450px) {
+  .home-menu {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    gap: 75px;
+  }
+  .home-menu-titel-holder:before,
+  .home-menu-titel-holder:after {
+    display: none;
+  }
   .home-cards-holder {
     flex-direction: column;
     align-items: flex-start;
@@ -153,6 +162,15 @@
   }
 }
 @media (max-width: 800px) {
+  .home-menu {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    gap: 75px;
+  }
+  .home-menu-titel-holder:before,
+  .home-menu-titel-holder:after {
+    display: none;
+  }
   .home-cards-holder {
     flex-direction: column;
     align-items: flex-start;

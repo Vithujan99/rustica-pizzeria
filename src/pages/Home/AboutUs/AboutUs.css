@@ -106,8 +106,17 @@
   color: var(--color-four);
   font-weight: 600;
 }
-
+@media (max-height: 450px) {
+  .home-aboutus-titel-holder:before,
+  .home-aboutus-titel-holder:after {
+    display: none;
+  }
+}
 @media (max-width: 800px) {
+  .home-aboutus-titel-holder:before,
+  .home-aboutus-titel-holder:after {
+    display: none;
+  }
   .home-aboutus-content {
     display: flex;
     flex-direction: column;
@@ -123,17 +132,14 @@
   .home-aboutus-titel {
     font-size: 35px;
   }
-  .home-aboutus-titel-holder:before {
-    width: 251px;
-  }
-  .home-aboutus-titel-holder:after {
-    width: 251px;
-  }
   .home-aboutus-content-container {
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 50px;
+  }
+  .home-aboutus-content-öffnungzeiten {
+    padding: 0 15px 0 15px;
   }
 }
